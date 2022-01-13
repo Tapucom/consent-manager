@@ -62,5 +62,19 @@ export var RedButton = styled('button')(
     )),
   baseStyles
 )
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnV0dG9ucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb25zZW50LW1hbmFnZXIvYnV0dG9ucy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sTUFBTSxFQUFFLEVBQUUsR0FBRyxFQUFFLE1BQU0sZUFBZSxDQUFBO0FBRTNDLElBQU0sVUFBVSxHQUFHLEdBQUcsa1RBQUEsK09BWXJCLElBQUEsQ0FBQTtBQUVELE1BQU0sQ0FBQyxJQUFNLGFBQWEsR0FBRyxNQUFNLENBQUMsUUFBUSxDQUFDLGk0QkFBQSxNQUN6QyxFQUFVLHN6QkFtQmIsS0FuQkcsVUFBVSxDQW1CYixDQUFBO0FBRUQsTUFBTSxDQUFDLElBQU0sV0FBVyxHQUFHLE1BQU0sQ0FBQyxRQUFRLENBQUMsc3VCQUFBLE1BQ3ZDLEVBQVUsMnBCQWlCYixLQWpCRyxVQUFVLENBaUJiLENBQUE7QUFFRCxNQUFNLENBQUMsSUFBTSxTQUFTLEdBQUcsTUFBTSxDQUFDLFFBQVEsQ0FBQyxpdUJBQUEsTUFDckMsRUFBVSxzcEJBaUJiLEtBakJHLFVBQVUsQ0FpQmIsQ0FBQSJ9
+export var BlueButton = styled('button')(
+  templateObject_5 ||
+    (templateObject_5 = __makeTemplateObject(
+      [
+        '\n  ',
+        ';\n  background-color: #0074e4;\n  background-image: linear-gradient(to top, #0079e4, #0074e4);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #0074e4, #0079e4);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #0079e4, #0074e4);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+      ],
+      [
+        '\n  ',
+        ';\n  background-color: #0074e4;\n  background-image: linear-gradient(to top, #0079e4, #0074e4);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #0074e4, #0079e4);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #0079e4, #0074e4);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+      ]
+    )),
+  baseStyles
+)
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnV0dG9ucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb25zZW50LW1hbmFnZXIvYnV0dG9ucy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sTUFBTSxFQUFFLEVBQUUsR0FBRyxFQUFFLE1BQU0sZUFBZSxDQUFBO0FBRTNDLElBQU0sVUFBVSxHQUFHLEdBQUcsa1RBQUEsK09BWXJCLElBQUEsQ0FBQTtBQUVELE1BQU0sQ0FBQyxJQUFNLGFBQWEsR0FBRyxNQUFNLENBQUMsUUFBUSxDQUFDLGk0QkFBQSxNQUN6QyxFQUFVLHN6QkFtQmIsS0FuQkcsVUFBVSxDQW1CYixDQUFBO0FBRUQsTUFBTSxDQUFDLElBQU0sV0FBVyxHQUFHLE1BQU0sQ0FBQyxRQUFRLENBQUMsc3VCQUFBLE1BQ3ZDLEVBQVUsMnBCQWlCYixLQWpCRyxVQUFVLENBaUJiLENBQUE7QUFFRCxNQUFNLENBQUMsSUFBTSxTQUFTLEdBQUcsTUFBTSxDQUFDLFFBQVEsQ0FBQyxpdUJBQUEsTUFDckMsRUFBVSxzcEJBaUJiLEtBakJHLFVBQVUsQ0FpQmIsQ0FBQTtBQUVELE1BQU0sQ0FBQyxJQUFNLFVBQVUsR0FBRyxNQUFNLENBQUMsUUFBUSxDQUFDLGl1QkFBQSxNQUN0QyxFQUFVLHNwQkFpQmIsS0FqQkcsVUFBVSxDQWlCYixDQUFBIn0=

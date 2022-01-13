@@ -46,7 +46,7 @@ var __importStar =
     return result
   }
 Object.defineProperty(exports, '__esModule', { value: true })
-exports.RedButton = exports.GreenButton = exports.DefaultButton = void 0
+exports.BlueButton = exports.RedButton = exports.GreenButton = exports.DefaultButton = void 0
 var react_emotion_1 = __importStar(require('react-emotion'))
 var baseStyles = react_emotion_1.css(
   templateObject_1 ||
@@ -101,5 +101,19 @@ exports.RedButton = react_emotion_1.default('button')(
     )),
   baseStyles
 )
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnV0dG9ucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb25zZW50LW1hbmFnZXIvYnV0dG9ucy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSw2REFBMkM7QUFFM0MsSUFBTSxVQUFVLEdBQUcsbUJBQUcsa1RBQUEsK09BWXJCLElBQUEsQ0FBQTtBQUVZLFFBQUEsYUFBYSxHQUFHLHVCQUFNLENBQUMsUUFBUSxDQUFDLGk0QkFBQSxNQUN6QyxFQUFVLHN6QkFtQmIsS0FuQkcsVUFBVSxFQW1CYjtBQUVZLFFBQUEsV0FBVyxHQUFHLHVCQUFNLENBQUMsUUFBUSxDQUFDLHN1QkFBQSxNQUN2QyxFQUFVLDJwQkFpQmIsS0FqQkcsVUFBVSxFQWlCYjtBQUVZLFFBQUEsU0FBUyxHQUFHLHVCQUFNLENBQUMsUUFBUSxDQUFDLGl1QkFBQSxNQUNyQyxFQUFVLHNwQkFpQmIsS0FqQkcsVUFBVSxFQWlCYiJ9
+exports.BlueButton = react_emotion_1.default('button')(
+  templateObject_5 ||
+    (templateObject_5 = __makeTemplateObject(
+      [
+        '\n  ',
+        ';\n  background-color: #0074e4;\n  background-image: linear-gradient(to top, #0079e4, #0074e4);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #0074e4, #0079e4);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #0079e4, #0074e4);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+      ],
+      [
+        '\n  ',
+        ';\n  background-color: #0074e4;\n  background-image: linear-gradient(to top, #0079e4, #0074e4);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #0074e4, #0079e4);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #0079e4, #0074e4);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+      ]
+    )),
+  baseStyles
+)
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnV0dG9ucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb25zZW50LW1hbmFnZXIvYnV0dG9ucy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSw2REFBMkM7QUFFM0MsSUFBTSxVQUFVLEdBQUcsbUJBQUcsa1RBQUEsK09BWXJCLElBQUEsQ0FBQTtBQUVZLFFBQUEsYUFBYSxHQUFHLHVCQUFNLENBQUMsUUFBUSxDQUFDLGk0QkFBQSxNQUN6QyxFQUFVLHN6QkFtQmIsS0FuQkcsVUFBVSxFQW1CYjtBQUVZLFFBQUEsV0FBVyxHQUFHLHVCQUFNLENBQUMsUUFBUSxDQUFDLHN1QkFBQSxNQUN2QyxFQUFVLDJwQkFpQmIsS0FqQkcsVUFBVSxFQWlCYjtBQUVZLFFBQUEsU0FBUyxHQUFHLHVCQUFNLENBQUMsUUFBUSxDQUFDLGl1QkFBQSxNQUNyQyxFQUFVLHNwQkFpQmIsS0FqQkcsVUFBVSxFQWlCYjtBQUVZLFFBQUEsVUFBVSxHQUFHLHVCQUFNLENBQUMsUUFBUSxDQUFDLGl1QkFBQSxNQUN0QyxFQUFVLHNwQkFpQmIsS0FqQkcsVUFBVSxFQWlCYiJ9
