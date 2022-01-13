@@ -75,3 +75,23 @@ export const RedButton = styled('button')`
       inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);
   }
 `
+
+export const BlueButton = styled('button')`
+  ${baseStyles};
+  background-color: #0074e4;
+  background-image: linear-gradient(to top, #0079e4, #0074e4);
+  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);
+  color: #fff;
+  &:hover {
+    background-image: linear-gradient(to top, #0074e4, #0079e4);
+  }
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),
+      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);
+  }
+  &:active {
+    background-image: linear-gradient(to top, #0079e4, #0074e4);
+    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),
+      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);
+  }
+`

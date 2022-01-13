@@ -200,7 +200,7 @@ const Container: React.FC<ContainerProps> = props => {
   const handleCancelConfirm = () => {
     toggleCancel(false)
     toggleDialog(false)
-    props.resetPreferences()
+    onAcceptAll()
   }
 
   return (

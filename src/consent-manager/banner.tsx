@@ -2,8 +2,8 @@ import React, { Fragment, PureComponent } from 'react'
 import styled from 'react-emotion'
 import fontStyles from './font-styles'
 import { ActionsBlockProps } from '../types'
-import { DefaultButton, GreenButton } from './buttons'
-
+import { GreenButton } from './buttons'
+// DefaultButton
 interface RootProps {
   readonly backgroundColor: string
   readonly textColor: string
@@ -174,13 +174,13 @@ export default class Banner extends PureComponent<Props> {
         {actionsBlock === true && (
           <ActionsBlock>
             <GreenButton type="button" onClick={onAcceptAll}>
-              Allow all
+              Çerezleri Kabul Et
             </GreenButton>
-            {!asModal && (
+            {/* {!asModal && (
               <DefaultButton type="button" onClick={onDenyAll}>
-                Deny all
+                Kapat
               </DefaultButton>
-            )}
+            )} */}
           </ActionsBlock>
         )}
         {!hideCloseButton && (

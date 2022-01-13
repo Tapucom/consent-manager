@@ -1960,13 +1960,13 @@ var consentManager = (function(e) {
                 c.charCodeAt(0) + c.charCodeAt(t))
               ) {
                 case 226:
-                  c = i.replace(g, 'tb')
+                  c = i.replace(v, 'tb')
                   break
                 case 232:
-                  c = i.replace(g, 'tb-rl')
+                  c = i.replace(v, 'tb-rl')
                   break
                 case 220:
-                  c = i.replace(g, 'lr')
+                  c = i.replace(v, 'lr')
                   break
                 default:
                   return i
@@ -2084,7 +2084,7 @@ var consentManager = (function(e) {
               var d,
                 h,
                 m,
-                g,
+                v,
                 w,
                 A = 0,
                 k = 0,
@@ -2266,7 +2266,7 @@ var consentManager = (function(e) {
                     break
                   }
                 default:
-                  switch ((E++, (g = c.charAt(M)), h)) {
+                  switch ((E++, (v = c.charAt(M)), h)) {
                     case 9:
                     case 32:
                       if (0 === C + A + k)
@@ -2275,23 +2275,23 @@ var consentManager = (function(e) {
                           case 58:
                           case 9:
                           case 32:
-                            g = ''
+                            v = ''
                             break
                           default:
-                            32 !== h && (g = ' ')
+                            32 !== h && (v = ' ')
                         }
                       break
                     case 0:
-                      g = '\\0'
+                      v = '\\0'
                       break
                     case 12:
-                      g = '\\f'
+                      v = '\\f'
                       break
                     case 11:
-                      g = '\\v'
+                      v = '\\v'
                       break
                     case 38:
-                      0 === C + k + A && ((I = L = 1), (g = '\f' + g))
+                      0 === C + k + A && ((I = L = 1), (v = '\f' + v))
                       break
                     case 108:
                       if (0 === C + k + A + P && 0 < z)
@@ -2306,7 +2306,7 @@ var consentManager = (function(e) {
                       0 === C + k + A && (z = M)
                       break
                     case 44:
-                      0 === k + x + C + A && ((I = 1), (g += '\r'))
+                      0 === k + x + C + A && ((I = 1), (v += '\r'))
                       break
                     case 34:
                     case 39:
@@ -2354,11 +2354,11 @@ var consentManager = (function(e) {
                               42 === N &&
                               B + 2 !== M &&
                               (33 === c.charCodeAt(B + 2) && (Y += c.substring(B, M + 1)),
-                              (g = ''),
+                              (v = ''),
                               (k = 0))
                         }
                   }
-                  0 === k && (H += g)
+                  0 === k && (H += v)
               }
               ;(j = N), (N = h), M++
             }
@@ -2371,7 +2371,7 @@ var consentManager = (function(e) {
               if (((Y = I.join(',') + '{' + Y + '}'), 0 != O * P)) {
                 switch ((2 !== O || o(Y, 2) || (P = 0), P)) {
                   case 111:
-                    Y = Y.replace(v, ':-moz-$1') + Y
+                    Y = Y.replace(g, ':-moz-$1') + Y
                     break
                   case 112:
                     Y =
@@ -2402,8 +2402,8 @@ var consentManager = (function(e) {
           m = /([\t\r\n ])*\f?&/g,
           _ = /@(k\w+)\s*(\S*)\s*/,
           b = /::(place)/g,
-          v = /:(read-only)/g,
-          g = /[svh]\w+-[tblr]{2}/,
+          g = /:(read-only)/g,
+          v = /[svh]\w+-[tblr]{2}/,
           y = /\(\s*(.*)\s*\)/g,
           w = /([\s\S]*?);/g,
           A = /-self|flex-/g,
@@ -2551,7 +2551,7 @@ var consentManager = (function(e) {
       var _ = new i(r)
       _.use(t.stylisPlugins)(s)
       var b = ''
-      function v(e, t) {
+      function g(e, t) {
         if (null == e) return ''
         switch (typeof e) {
           case 'boolean':
@@ -2561,7 +2561,7 @@ var consentManager = (function(e) {
               var n = e.toString()
               return n
             }
-            return v.call(this, void 0 === this ? e() : e(this.mergedProps, this.context), t)
+            return g.call(this, void 0 === this ? e() : e(this.mergedProps, this.context), t)
           case 'object':
             return A.call(this, e)
           default:
@@ -2569,7 +2569,7 @@ var consentManager = (function(e) {
             return !1 === t && void 0 !== r ? r : e
         }
       }
-      var g,
+      var v,
         y,
         w = new WeakMap()
       function A(e) {
@@ -2578,7 +2578,7 @@ var consentManager = (function(e) {
         return (
           Array.isArray(e)
             ? e.forEach(function(e) {
-                t += v.call(this, e, !1)
+                t += g.call(this, e, !1)
               }, this)
             : Object.keys(e).forEach(function(n) {
                 'object' != typeof e[n]
@@ -2591,7 +2591,7 @@ var consentManager = (function(e) {
                   ? e[n].forEach(function(e) {
                       t += l(n) + ':' + f(n, e) + ';'
                     })
-                  : (t += n + '{' + v.call(this, e[n], !1) + '}')
+                  : (t += n + '{' + g.call(this, e[n], !1) + '}')
               }, this),
           w.set(e, t),
           t
@@ -2605,28 +2605,28 @@ var consentManager = (function(e) {
           var t = !0,
             n = '',
             r = ''
-          null == e || void 0 === e.raw ? ((t = !1), (n += v.call(this, e, !1))) : (n += e[0])
+          null == e || void 0 === e.raw ? ((t = !1), (n += g.call(this, e, !1))) : (n += e[0])
           for (var o = arguments.length, a = new Array(o > 1 ? o - 1 : 0), i = 1; i < o; i++)
             a[i - 1] = arguments[i]
           return (
             a.forEach(function(r, o) {
-              ;(n += v.call(this, r, 46 === n.charCodeAt(n.length - 1))),
+              ;(n += g.call(this, r, 46 === n.charCodeAt(n.length - 1))),
                 !0 === t && void 0 !== e[o + 1] && (n += e[o + 1])
             }, this),
             (y = n),
             (n = n.replace(k, function(e, t) {
               return (r += '-' + t), ''
             })),
-            (g = x(n, r)),
+            (v = x(n, r)),
             n
           )
         }
       function E(e, t) {
-        void 0 === u.inserted[g] && ((n = ''), _(e, t), (u.inserted[g] = n))
+        void 0 === u.inserted[v] && ((n = ''), _(e, t), (u.inserted[v] = n))
       }
       var S = function() {
         var e = C.apply(this, arguments),
-          t = o + '-' + g
+          t = o + '-' + v
         return void 0 === u.registered[t] && (u.registered[t] = y), E('.' + t, e), t
       }
       function P(e, t) {
@@ -2675,7 +2675,7 @@ var consentManager = (function(e) {
         },
         keyframes: function() {
           var e = C.apply(this, arguments),
-            t = 'animation-' + g
+            t = 'animation-' + v
           return E('', '@keyframes ' + t + '{' + e + '}'), t
         },
         css: S,
@@ -4019,12 +4019,12 @@ var consentManager = (function(e) {
         n = _(t)
       return t.readAsArrayBuffer(e), n
     }
-    function v(e) {
+    function g(e) {
       if (e.slice) return e.slice(0)
       var t = new Uint8Array(e.byteLength)
       return t.set(new Uint8Array(e)), t.buffer
     }
-    function g() {
+    function v() {
       return (
         (this.bodyUsed = !1),
         (this._initBody = function(e) {
@@ -4041,10 +4041,10 @@ var consentManager = (function(e) {
                 : o && URLSearchParams.prototype.isPrototypeOf(e)
                 ? (this._bodyText = e.toString())
                 : c && i && (t = e) && DataView.prototype.isPrototypeOf(t)
-                ? ((this._bodyArrayBuffer = v(e.buffer)),
+                ? ((this._bodyArrayBuffer = g(e.buffer)),
                   (this._bodyInit = new Blob([this._bodyArrayBuffer])))
                 : c && (ArrayBuffer.prototype.isPrototypeOf(e) || l(e))
-                ? (this._bodyArrayBuffer = v(e))
+                ? (this._bodyArrayBuffer = g(e))
                 : (this._bodyText = e = Object.prototype.toString.call(e))
               : (this._bodyText = ''),
             this.headers.get('content-type') ||
@@ -4242,8 +4242,8 @@ var consentManager = (function(e) {
     ;(w.prototype.clone = function() {
       return new w(this, { body: this._bodyInit })
     }),
-      g.call(w.prototype),
-      g.call(k.prototype),
+      v.call(w.prototype),
+      v.call(k.prototype),
       (k.prototype.clone = function() {
         return new k(this._bodyInit, {
           status: this.status,
@@ -4369,13 +4369,13 @@ var consentManager = (function(e) {
     'use strict'
     n.r(t),
       n.d(t, 'version', function() {
-        return Ti
+        return Ni
       }),
       n.d(t, 'openConsentManager', function() {
-        return Pn
+        return On
       }),
       n.d(t, 'doNotTrack', function() {
-        return Si
+        return Pi
       }),
       n.d(t, 'inEU', function() {
         return Ie.a
@@ -4386,13 +4386,13 @@ var consentManager = (function(e) {
     var r = {}
     n.r(r),
       n.d(r, 'loadPreferences', function() {
-        return Rn
+        return zn
       }),
       n.d(r, 'onPreferencesSaved', function() {
-        return Mn
+        return In
       }),
       n.d(r, 'savePreferences', function() {
-        return In
+        return Ln
       })
     var o,
       a,
@@ -4443,10 +4443,10 @@ var consentManager = (function(e) {
       }
       return null != a.vnode && a.vnode(s), s
     }
-    function v(e) {
+    function g(e) {
       return e.children
     }
-    function g(e, t) {
+    function v(e, t) {
       ;(this.props = e), (this.context = t)
     }
     function y(e, t) {
@@ -4503,7 +4503,7 @@ var consentManager = (function(e) {
         h,
         m,
         _,
-        g,
+        v,
         w,
         A = (r && r.__k) || p,
         k = A.length
@@ -4516,7 +4516,7 @@ var consentManager = (function(e) {
               : 'string' == typeof m || 'number' == typeof m || 'bigint' == typeof m
               ? b(null, m, null, null, m)
               : Array.isArray(m)
-              ? b(v, { children: m }, null, null, null)
+              ? b(g, { children: m }, null, null, null)
               : m.__b > 0
               ? b(m.type, m.props, m.key, null, m.__v)
               : m)
@@ -4541,7 +4541,7 @@ var consentManager = (function(e) {
               h.ref != d &&
               (w || (w = []), h.ref && w.push(h.ref, null, m), w.push(d, m.__c || _, m)),
             null != _
-              ? (null == g && (g = _),
+              ? (null == v && (v = _),
                 'function' == typeof m.type && null != m.__k && m.__k === h.__k
                   ? (m.__d = c = C(m, c, e))
                   : (c = S(e, m, h, A, _, c)),
@@ -4550,7 +4550,7 @@ var consentManager = (function(e) {
                   : (e.value = ''))
               : c && h.__e == c && c.parentNode != e && (c = y(h))
         }
-      for (n.__e = g, l = k; l--; )
+      for (n.__e = v, l = k; l--; )
         null != A[l] &&
           ('function' == typeof n.type &&
             null != A[l].__e &&
@@ -4662,7 +4662,7 @@ var consentManager = (function(e) {
               ? (b = (f = t.__c = n.__c).__ = f.__E)
               : ('prototype' in C && C.prototype.render
                   ? (t.__c = f = new C(y, A))
-                  : ((t.__c = f = new g(y, A)), (f.constructor = C), (f.render = I)),
+                  : ((t.__c = f = new v(y, A)), (f.constructor = C), (f.render = I)),
                 w && w.sub(f),
                 (f.props = y),
                 f.state || (f.state = {}),
@@ -4722,7 +4722,7 @@ var consentManager = (function(e) {
             (f.state = f.__s),
             null != f.getChildContext && (r = h(h({}, r), f.getChildContext())),
             p || null == f.getSnapshotBeforeUpdate || (_ = f.getSnapshotBeforeUpdate(d, m)),
-            (k = null != l && l.type === v && null == l.key ? l.props.children : l),
+            (k = null != l && l.type === g && null == l.key ? l.props.children : l),
             x(e, Array.isArray(k) ? k : [k], t, n, r, o, i, s, c, u),
             (f.base = t.__e),
             (t.__h = null),
@@ -4872,7 +4872,7 @@ var consentManager = (function(e) {
         (s = []),
         D(
           t,
-          (e = ((!r && n) || t).__k = _(v, null, [e])),
+          (e = ((!r && n) || t).__k = _(g, null, [e])),
           i || f,
           f,
           void 0 !== t.ownerSVGElement,
@@ -4918,7 +4918,7 @@ var consentManager = (function(e) {
         }
       }),
       (i = 0),
-      (g.prototype.setState = function(e, t) {
+      (v.prototype.setState = function(e, t) {
         var n
         ;(n =
           null != this.__s && this.__s !== this.state ? this.__s : (this.__s = h({}, this.state))),
@@ -4926,10 +4926,10 @@ var consentManager = (function(e) {
           e && h(n, e),
           null != e && this.__v && (t && this.__h.push(t), A(this))
       }),
-      (g.prototype.forceUpdate = function(e) {
+      (v.prototype.forceUpdate = function(e) {
         this.__v && ((this.__e = !0), e && this.__h.push(e), A(this))
       }),
-      (g.prototype.render = v),
+      (v.prototype.render = g),
       (s = []),
       (c =
         'function' == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout),
@@ -5076,7 +5076,7 @@ var consentManager = (function(e) {
     function le(e) {
       this.props = e
     }
-    ;((le.prototype = new g()).isPureReactComponent = !0),
+    ;((le.prototype = new v()).isPureReactComponent = !0),
       (le.prototype.shouldComponentUpdate = function(e, t) {
         return ue(this.props, e) || ue(this.state, t)
       })
@@ -5113,22 +5113,22 @@ var consentManager = (function(e) {
     function be() {
       ;(this.__u = 0), (this.t = null), (this.__b = null)
     }
-    function ve(e) {
+    function ge(e) {
       var t = e.__.__c
       return t && t.__e && t.__e(e)
     }
-    function ge() {
+    function ve() {
       ;(this.u = null), (this.o = null)
     }
     ;(a.unmount = function(e) {
       var t = e.__c
       t && t.__R && t.__R(), t && !0 === e.__h && (e.type = null), _e && _e(e)
     }),
-      ((be.prototype = new g()).__c = function(e, t) {
+      ((be.prototype = new v()).__c = function(e, t) {
         var n = t.__c,
           r = this
         null == r.t && (r.t = []), r.t.push(n)
-        var o = ve(r.__v),
+        var o = ge(r.__v),
           a = !1,
           i = function() {
             a || ((a = !0), (n.__R = null), o ? o(s) : s())
@@ -5191,8 +5191,8 @@ var consentManager = (function(e) {
           }
           this.__b = null
         }
-        var o = t.__e && _(v, null, e.fallback)
-        return o && (o.__h = null), [_(v, null, t.__e ? null : e.children), o]
+        var o = t.__e && _(g, null, e.fallback)
+        return o && (o.__h = null), [_(g, null, t.__e ? null : e.children), o]
       })
     var ye = function(e, t, n) {
       if (
@@ -5240,9 +5240,9 @@ var consentManager = (function(e) {
             L(_(we, { context: t.context }, e.__v), t.l))
           : t.l && t.componentWillUnmount()
     }
-    ;((ge.prototype = new g()).__e = function(e) {
+    ;((ve.prototype = new v()).__e = function(e) {
       var t = this,
-        n = ve(t.__v),
+        n = ge(t.__v),
         r = t.o.get(e)
       return (
         r[0]++,
@@ -5254,14 +5254,14 @@ var consentManager = (function(e) {
         }
       )
     }),
-      (ge.prototype.render = function(e) {
+      (ve.prototype.render = function(e) {
         ;(this.u = null), (this.o = new Map())
         var t = E(e.children)
         e.revealOrder && 'b' === e.revealOrder[0] && t.reverse()
         for (var n = t.length; n--; ) this.o.set(t[n], (this.u = [1, 0, this.u]))
         return e.children
       }),
-      (ge.prototype.componentDidUpdate = ge.prototype.componentDidMount = function() {
+      (ve.prototype.componentDidUpdate = ve.prototype.componentDidMount = function() {
         var e = this
         this.o.forEach(function(t, n) {
           ye(e, n, t)
@@ -5275,11 +5275,11 @@ var consentManager = (function(e) {
           : /fil|che|ra/i
         ).test(e)
       }
-    ;(g.prototype.isReactComponent = {}),
+    ;(v.prototype.isReactComponent = {}),
       ['componentWillMount', 'componentWillReceiveProps', 'componentWillUpdate'].forEach(function(
         e
       ) {
-        Object.defineProperty(g.prototype, e, {
+        Object.defineProperty(v.prototype, e, {
           configurable: !0,
           get: function() {
             return this['UNSAFE_' + e]
@@ -5470,12 +5470,12 @@ var consentManager = (function(e) {
         createRef: function() {
           return { current: null }
         },
-        Fragment: v,
+        Fragment: g,
         isValidElement: Re,
         findDOMNode: function(e) {
           return (e && (e.base || (1 === e.nodeType && e))) || null
         },
-        Component: g,
+        Component: v,
         PureComponent: le,
         memo: function(e, t) {
           function n(e) {
@@ -5518,9 +5518,9 @@ var consentManager = (function(e) {
         unstable_batchedUpdates: function(e, t) {
           return e(t)
         },
-        StrictMode: v,
+        StrictMode: g,
         Suspense: be,
-        SuspenseList: ge,
+        SuspenseList: ve,
         lazy: function(e) {
           var t, n, r
           function o(o) {
@@ -5608,8 +5608,8 @@ var consentManager = (function(e) {
       mt,
       _t,
       bt,
-      vt,
       gt,
+      vt,
       yt,
       wt,
       At,
@@ -5623,7 +5623,8 @@ var consentManager = (function(e) {
       Tt,
       Nt,
       Dt,
-      jt = (function(e, t) {
+      jt,
+      Rt = (function(e, t) {
         var n = function(r, o) {
           var a, i, s, c
           void 0 !== o &&
@@ -5713,14 +5714,14 @@ var consentManager = (function(e) {
         }
         return n
       })(He, ze),
-      Rt = function(e, t) {
+      zt = function(e, t) {
         return (
           Object.defineProperty ? Object.defineProperty(e, 'raw', { value: t }) : (e.raw = t), e
         )
       },
-      zt = Object(He.css)(
+      Mt = Object(He.css)(
         nt ||
-          (nt = Rt(
+          (nt = zt(
             [
               "\n  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,\n    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n  color: #435a6f;\n  font-size: 16px;\n  font-weight: 400;\n  line-height: 22px;\n  letter-spacing: -0.05px;\n"
             ],
@@ -5729,14 +5730,14 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      Mt = function(e, t) {
+      It = function(e, t) {
         return (
           Object.defineProperty ? Object.defineProperty(e, 'raw', { value: t }) : (e.raw = t), e
         )
       },
-      It = Object(He.css)(
+      Lt = Object(He.css)(
         rt ||
-          (rt = Mt(
+          (rt = It(
             [
               '\n  height: 32px;\n  padding: 0 16px;\n  border: none;\n  border-radius: 4px;\n  color: inherit;\n  font: inherit;\n  font-size: 12px;\n  line-height: 1;\n  cursor: pointer;\n  outline: none;\n  transition: box-shadow 80ms ease-in-out;\n'
             ],
@@ -5745,9 +5746,9 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      Lt = jt('button')(
+      Bt = Rt('button')(
         ot ||
-          (ot = Mt(
+          (ot = It(
             [
               '\n  ',
               ';\n  margin-right: 8px;\n  background-color: #fff;\n  background-image: linear-gradient(to top, rgba(67, 90, 111, 0.041), rgba(255, 255, 255, 0.041));\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.146), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.079);\n  &:hover {\n    background-image: linear-gradient(to top, rgba(67, 90, 111, 0.057), rgba(67, 90, 111, 0.025));\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.255),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.114);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(1, 108, 209, 0.146), inset 0 0 0 1px rgba(67, 90, 111, 0.38),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.079);\n  }\n  &:active {\n    background: rgba(1, 108, 209, 0.079);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.146),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.079);\n  }\n'
@@ -5757,11 +5758,11 @@ var consentManager = (function(e) {
               ';\n  margin-right: 8px;\n  background-color: #fff;\n  background-image: linear-gradient(to top, rgba(67, 90, 111, 0.041), rgba(255, 255, 255, 0.041));\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.146), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.079);\n  &:hover {\n    background-image: linear-gradient(to top, rgba(67, 90, 111, 0.057), rgba(67, 90, 111, 0.025));\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.255),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.114);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(1, 108, 209, 0.146), inset 0 0 0 1px rgba(67, 90, 111, 0.38),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.079);\n  }\n  &:active {\n    background: rgba(1, 108, 209, 0.079);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.146),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.079);\n  }\n'
             ]
           )),
-        It
+        Lt
       ),
-      Bt = jt('button')(
+      Ut = Rt('button')(
         at ||
-          (at = Mt(
+          (at = It(
             [
               '\n  ',
               ';\n  background-color: #47b881;\n  background-image: linear-gradient(to top, #3faf77, #47b881);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #37a56d, #3faf77);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(71, 184, 129, 0.477), inset 0 0 0 1px rgba(71, 184, 129, 0.204),\n      inset 0 -1px 1px 0 rgba(71, 184, 129, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #2d9760, #248953);\n    box-shadow: inset 0 0 0 1px rgba(71, 184, 129, 0.204),\n      inset 0 -1px 1px 0 rgba(71, 184, 129, 0.204);\n  }\n'
@@ -5771,30 +5772,45 @@ var consentManager = (function(e) {
               ';\n  background-color: #47b881;\n  background-image: linear-gradient(to top, #3faf77, #47b881);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #37a56d, #3faf77);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(71, 184, 129, 0.477), inset 0 0 0 1px rgba(71, 184, 129, 0.204),\n      inset 0 -1px 1px 0 rgba(71, 184, 129, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #2d9760, #248953);\n    box-shadow: inset 0 0 0 1px rgba(71, 184, 129, 0.204),\n      inset 0 -1px 1px 0 rgba(71, 184, 129, 0.204);\n  }\n'
             ]
           )),
-        It
+        Lt
       ),
-      Ut = jt('button')(
-        it ||
-          (it = Mt(
-            [
-              '\n  ',
-              ';\n  background-color: #f36331;\n  background-image: linear-gradient(to top, #f4541d, #f36331);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #f4450a, #f4541d);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #dd3c06, #c63403);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
-            ],
-            [
-              '\n  ',
-              ';\n  background-color: #f36331;\n  background-image: linear-gradient(to top, #f4541d, #f36331);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #f4450a, #f4541d);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #dd3c06, #c63403);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
-            ]
-          )),
-        It
-      ),
-      Ft = function(e, t) {
+      Ft =
+        (Rt('button')(
+          it ||
+            (it = It(
+              [
+                '\n  ',
+                ';\n  background-color: #f36331;\n  background-image: linear-gradient(to top, #f4541d, #f36331);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #f4450a, #f4541d);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #dd3c06, #c63403);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+              ],
+              [
+                '\n  ',
+                ';\n  background-color: #f36331;\n  background-image: linear-gradient(to top, #f4541d, #f36331);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #f4450a, #f4541d);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #dd3c06, #c63403);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+              ]
+            )),
+          Lt
+        ),
+        Rt('button')(
+          st ||
+            (st = It(
+              [
+                '\n  ',
+                ';\n  background-color: #0074e4;\n  background-image: linear-gradient(to top, #0079e4, #0074e4);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #0074e4, #0079e4);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #0079e4, #0074e4);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+              ],
+              [
+                '\n  ',
+                ';\n  background-color: #0074e4;\n  background-image: linear-gradient(to top, #0079e4, #0074e4);\n  box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204), inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  color: #fff;\n  &:hover {\n    background-image: linear-gradient(to top, #0074e4, #0079e4);\n  }\n  &:focus {\n    box-shadow: 0 0 0 3px rgba(243, 99, 49, 0.477), inset 0 0 0 1px rgba(243, 99, 49, 0.204),\n      inset 0 -1px 1px 0 rgba(243, 99, 49, 0.204);\n  }\n  &:active {\n    background-image: linear-gradient(to top, #0079e4, #0074e4);\n    box-shadow: inset 0 0 0 1px rgba(67, 90, 111, 0.204),\n      inset 0 -1px 1px 0 rgba(67, 90, 111, 0.204);\n  }\n'
+              ]
+            )),
+          Lt
+        )),
+      Ht = function(e, t) {
         return (
           Object.defineProperty ? Object.defineProperty(e, 'raw', { value: t }) : (e.raw = t), e
         )
       },
-      Ht =
-        ((st = function(e, t) {
-          return (st =
+      Yt =
+        ((ct = function(e, t) {
+          return (ct =
             Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array &&
               function(e, t) {
@@ -5808,23 +5824,23 @@ var consentManager = (function(e) {
           function n() {
             this.constructor = e
           }
-          st(e, t),
+          ct(e, t),
             (e.prototype = null === t ? Object.create(t) : ((n.prototype = t.prototype), new n()))
         }),
-      Yt = jt('div')(
-        ct ||
-          (ct = Ft(
-            [
-              '\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: #fff;\n  opacity: 0.8;\n'
-            ],
-            [
-              '\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: #fff;\n  opacity: 0.8;\n'
-            ]
-          ))
-      ),
-      Kt = jt('div')(
+      Kt = Rt('div')(
         ut ||
-          (ut = Ft(
+          (ut = Ht(
+            [
+              '\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: #fff;\n  opacity: 0.8;\n'
+            ],
+            [
+              '\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: #fff;\n  opacity: 0.8;\n'
+            ]
+          ))
+      ),
+      Gt = Rt('div')(
+        lt ||
+          (lt = Ht(
             [
               '\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  max-width: 500px;\n  @media (max-width: 767px) {\n    width: 80vw;\n  }\n'
             ],
@@ -5833,9 +5849,9 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      Gt = jt('div')(
-        lt ||
-          (lt = Ft(
+      Wt = Rt('div')(
+        ft ||
+          (ft = Ht(
             [
               '\n  ',
               ';\n  position: relative;\n  max-width: 500px;\n  padding: 18px;\n  padding-right: ',
@@ -5851,7 +5867,7 @@ var consentManager = (function(e) {
               ';\n  text-align: center;\n  font-size: 14px;\n  line-height: 1.3;\n'
             ]
           )),
-        zt,
+        Mt,
         function(e) {
           return e.hideCloseButton ? '18px' : '40px'
         },
@@ -5862,9 +5878,9 @@ var consentManager = (function(e) {
           return e.textColor
         }
       ),
-      Wt = jt('div')(
-        ft ||
-          (ft = Ft(
+      Vt = Rt('div')(
+        pt ||
+          (pt = Ht(
             [
               '\n  ',
               ';\n  position: relative;\n  padding: 8px;\n  padding-right: ',
@@ -5880,7 +5896,7 @@ var consentManager = (function(e) {
               ';\n  text-align: center;\n  font-size: 12px;\n  line-height: 1.3;\n  @media (min-width: 768px) {\n    display: flex;\n    align-items: center;\n  }\n'
             ]
           )),
-        zt,
+        Mt,
         function(e) {
           return e.hideCloseButton ? '8px' : '40px'
         },
@@ -5891,9 +5907,9 @@ var consentManager = (function(e) {
           return e.textColor
         }
       ),
-      Vt = jt('div')(
-        pt ||
-          (pt = Ft(
+      qt = Rt('div')(
+        dt ||
+          (dt = Ht(
             [
               '\n  margin-bottom: ',
               ';\n  @media (min-width: 768px) {\n    flex: auto;\n    margin-bottom: ',
@@ -5912,9 +5928,9 @@ var consentManager = (function(e) {
           return e.asModal ? '20px' : '0'
         }
       ),
-      qt = jt('div')(
-        dt ||
-          (dt = Ft(
+      Xt = Rt('div')(
+        ht ||
+          (ht = Ht(
             [
               '\n  color: #000;\n  button {\n    margin: 4px 0;\n    width: 100%;\n    @media (min-width: 768px) {\n      margin: 4px 8px;\n      width: 200px;\n    }\n  }\n'
             ],
@@ -5923,16 +5939,16 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      Xt = jt('p')(
-        ht ||
-          (ht = Ft(
+      $t = Rt('p')(
+        mt ||
+          (mt = Ht(
             ['\n  margin: 0;\n  &:not(:last-child) {\n    margin-bottom: 6px;\n  }\n'],
             ['\n  margin: 0;\n  &:not(:last-child) {\n    margin-bottom: 6px;\n  }\n']
           ))
       ),
-      $t = jt('button')(
-        mt ||
-          (mt = Ft(
+      Jt = Rt('button')(
+        _t ||
+          (_t = Ht(
             [
               '\n  position: absolute;\n  right: 8px;\n  top: ',
               ';\n  transform: translateY(-50%);\n  padding: 8px;\n  border: none;\n  background: none;\n  color: inherit;\n  font: inherit;\n  font-size: 14px;\n  line-height: 1;\n  cursor: pointer;\n'
@@ -5946,12 +5962,12 @@ var consentManager = (function(e) {
           return e.isTop ? '20px' : '50%'
         }
       ),
-      Jt = (function(e) {
+      Zt = (function(e) {
         function t() {
           return (null !== e && e.apply(this, arguments)) || this
         }
         return (
-          Ht(t, e),
+          Yt(t, e),
           (t.prototype.render = function() {
             var e = this.props,
               t = e.innerRef,
@@ -5967,14 +5983,14 @@ var consentManager = (function(e) {
               f = e.hideCloseButton,
               p = e.asModal,
               d = ze.createElement(
-                v,
+                g,
                 null,
                 ze.createElement(
-                  Vt,
+                  qt,
                   { asModal: p },
-                  ze.createElement(Xt, null, o),
+                  ze.createElement($t, null, o),
                   ze.createElement(
-                    Xt,
+                    $t,
                     null,
                     ze.createElement('button', { type: 'button', onClick: r }, a)
                   )
@@ -5982,35 +5998,34 @@ var consentManager = (function(e) {
                 'function' == typeof i && i({ acceptAll: u, denyAll: l, changePreferences: r }),
                 !0 === i &&
                   ze.createElement(
-                    qt,
+                    Xt,
                     null,
-                    ze.createElement(Bt, { type: 'button', onClick: u }, 'Allow all'),
-                    !p && ze.createElement(Lt, { type: 'button', onClick: l }, 'Deny all')
+                    ze.createElement(Ut, { type: 'button', onClick: u }, 'Çerezleri Kabul Et')
                   ),
                 !f &&
                   ze.createElement(
-                    $t,
+                    Jt,
                     { type: 'button', title: 'Close', 'aria-label': 'Close', onClick: n, isTop: p },
                     '✕'
                   )
               )
             return p
               ? ze.createElement(
-                  v,
+                  g,
                   null,
-                  ze.createElement(Yt, null),
+                  ze.createElement(Kt, null),
                   ze.createElement(
-                    Kt,
+                    Gt,
                     null,
                     ze.createElement(
-                      Gt,
+                      Wt,
                       { innerRef: t, backgroundColor: s, textColor: c, hideCloseButton: f },
                       d
                     )
                   )
                 )
               : ze.createElement(
-                  Wt,
+                  Vt,
                   { innerRef: t, backgroundColor: s, textColor: c, hideCloseButton: f },
                   d
                 )
@@ -6019,14 +6034,14 @@ var consentManager = (function(e) {
           t
         )
       })(le),
-      Zt = n(17),
-      Qt = n.n(Zt),
-      en = function(e, t) {
+      Qt = n(17),
+      en = n.n(Qt),
+      tn = function(e, t) {
         return (
           Object.defineProperty ? Object.defineProperty(e, 'raw', { value: t }) : (e.raw = t), e
         )
       },
-      tn = (function() {
+      nn = (function() {
         var e = function(t, n) {
           return (e =
             Object.setPrototypeOf ||
@@ -6046,20 +6061,20 @@ var consentManager = (function(e) {
             (t.prototype = null === n ? Object.create(n) : ((r.prototype = n.prototype), new r()))
         }
       })(),
-      nn = jt('div')(
-        _t ||
-          (_t = en(
-            [
-              '\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(67, 90, 111, 0.699);\n'
-            ],
-            [
-              '\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(67, 90, 111, 0.699);\n'
-            ]
-          ))
-      ),
-      rn = Object(He.keyframes)(
+      rn = Rt('div')(
         bt ||
-          (bt = en(
+          (bt = tn(
+            [
+              '\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(67, 90, 111, 0.699);\n'
+            ],
+            [
+              '\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(67, 90, 111, 0.699);\n'
+            ]
+          ))
+      ),
+      on = Object(He.keyframes)(
+        gt ||
+          (gt = tn(
             [
               '\n  from {\n    transform: scale(0.8);\n    opacity: 0;\n  }\n  to {\n    transform: scale(1);\n    opacity: 1;\n  }\n'
             ],
@@ -6068,9 +6083,9 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      on = jt('section')(
+      an = Rt('section')(
         vt ||
-          (vt = en(
+          (vt = tn(
             [
               '\n  ',
               ';\n  display: flex;\n  flex-direction: column;\n  max-width: calc(100vw - 16px);\n  max-height: calc(100% - 16px);\n  width: ',
@@ -6088,57 +6103,57 @@ var consentManager = (function(e) {
               ' both;\n'
             ]
           )),
-        zt,
+        Mt,
         function(e) {
           return e.width
         },
-        rn,
+        on,
         '200ms',
         'cubic-bezier(0.0, 0.0, 0.2, 1)'
       ),
-      an = jt('form')(
-        gt ||
-          (gt = en(
+      sn = Rt('form')(
+        yt ||
+          (yt = tn(
             ['\n  display: flex;\n  flex-direction: column;\n  min-height: 0;\n'],
             ['\n  display: flex;\n  flex-direction: column;\n  min-height: 0;\n']
           ))
       ),
-      sn = jt('div')(
-        yt ||
-          (yt = en(
-            [
-              '\n  flex: 1 0 auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 16px;\n  border-bottom: 1px solid rgba(67, 90, 111, 0.079);\n'
-            ],
-            [
-              '\n  flex: 1 0 auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 16px;\n  border-bottom: 1px solid rgba(67, 90, 111, 0.079);\n'
-            ]
-          ))
-      ),
-      cn = jt('h2')(
+      cn = Rt('div')(
         wt ||
-          (wt = en(
+          (wt = tn(
             [
-              '\n  margin: 0;\n  color: #1f4160;\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.3;\n'
+              '\n  flex: 1 0 auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 16px;\n  border-bottom: 1px solid rgba(67, 90, 111, 0.079);\n'
             ],
             [
-              '\n  margin: 0;\n  color: #1f4160;\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.3;\n'
+              '\n  flex: 1 0 auto;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 12px 16px;\n  border-bottom: 1px solid rgba(67, 90, 111, 0.079);\n'
             ]
           ))
       ),
-      un = jt('button')(
+      un = Rt('h2')(
         At ||
-          (At = en(
+          (At = tn(
             [
-              '\n  padding: 8px;\n  border: none;\n  background: none;\n  color: inherit;\n  font: inherit;\n  font-size: 14px;\n  line-height: 1;\n  cursor: pointer;\n'
+              '\n  margin: 0;\n  color: #1f4160;\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.3;\n'
             ],
             [
-              '\n  padding: 8px;\n  border: none;\n  background: none;\n  color: inherit;\n  font: inherit;\n  font-size: 14px;\n  line-height: 1;\n  cursor: pointer;\n'
+              '\n  margin: 0;\n  color: #1f4160;\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.3;\n'
             ]
           ))
       ),
-      ln = jt('div')(
+      ln = Rt('button')(
         kt ||
-          (kt = en(
+          (kt = tn(
+            [
+              '\n  padding: 8px;\n  border: none;\n  background: none;\n  color: inherit;\n  font: inherit;\n  font-size: 14px;\n  line-height: 1;\n  cursor: pointer;\n'
+            ],
+            [
+              '\n  padding: 8px;\n  border: none;\n  background: none;\n  color: inherit;\n  font: inherit;\n  font-size: 14px;\n  line-height: 1;\n  cursor: pointer;\n'
+            ]
+          ))
+      ),
+      fn = Rt('div')(
+        xt ||
+          (xt = tn(
             [
               '\n  overflow-y: auto;\n  padding: 16px;\n  padding-bottom: 0;\n  min-height: 0;\n  font-size: 14px;\n  line-height: 1.2;\n\n  p {\n    margin: 0;\n    &:not(:last-child) {\n      margin-bottom: 0.7em;\n    }\n  }\n\n  a {\n    color: #47b881;\n    &:hover {\n      color: #64c395;\n    }\n    &:active {\n      color: #248953;\n    }\n  }\n'
             ],
@@ -6147,14 +6162,14 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      fn = jt('div')(
-        xt ||
-          (xt = en(
+      pn = Rt('div')(
+        Ct ||
+          (Ct = tn(
             ['\n  padding: 16px;\n  text-align: right;\n'],
             ['\n  padding: 16px;\n  text-align: right;\n']
           ))
       ),
-      pn = (function(e) {
+      dn = (function(e) {
         function t(t) {
           var n = e.call(this, t) || this
           return (
@@ -6172,7 +6187,7 @@ var consentManager = (function(e) {
               var t = n.props.onCancel
               t && 27 === e.keyCode && t()
             }),
-            (n.titleId = Qt()()),
+            (n.titleId = en()()),
             (n.container = document.createElement('div')),
             n.container.setAttribute('data-consent-manager-dialog', ''),
             document.body.appendChild(n.container),
@@ -6180,7 +6195,7 @@ var consentManager = (function(e) {
           )
         }
         return (
-          tn(t, e),
+          nn(t, e),
           (t.prototype.render = function() {
             var e = this.props,
               t = e.onCancel,
@@ -6190,10 +6205,10 @@ var consentManager = (function(e) {
               a = e.buttons,
               i = e.width,
               s = ze.createElement(
-                nn,
+                rn,
                 { onClick: this.handleOverlayClick },
                 ze.createElement(
-                  on,
+                  an,
                   {
                     innerRef: this.handleRootRef,
                     role: 'dialog',
@@ -6202,21 +6217,21 @@ var consentManager = (function(e) {
                     width: i
                   },
                   ze.createElement(
-                    sn,
+                    cn,
                     null,
-                    ze.createElement(cn, { id: this.titleId }, r),
+                    ze.createElement(un, { id: this.titleId }, r),
                     t &&
                       ze.createElement(
-                        un,
+                        ln,
                         { onClick: t, title: 'Cancel', 'aria-label': 'Cancel' },
                         '✕'
                       )
                   ),
                   ze.createElement(
-                    an,
+                    sn,
                     { id: 'preferenceDialogForm', innerRef: this.handleFormRef, onSubmit: n },
-                    ze.createElement(ln, null, o),
-                    ze.createElement(fn, null, a)
+                    ze.createElement(fn, null, o),
+                    ze.createElement(pn, null, a)
                   )
                 )
               )
@@ -6244,12 +6259,12 @@ var consentManager = (function(e) {
           t
         )
       })(le),
-      dn = function(e, t) {
+      hn = function(e, t) {
         return (
           Object.defineProperty ? Object.defineProperty(e, 'raw', { value: t }) : (e.raw = t), e
         )
       },
-      hn = (function() {
+      mn = (function() {
         var e = function(t, n) {
           return (e =
             Object.setPrototypeOf ||
@@ -6269,30 +6284,30 @@ var consentManager = (function(e) {
             (t.prototype = null === n ? Object.create(n) : ((r.prototype = n.prototype), new r()))
         }
       })(),
-      mn = Object(He.css)(
-        Ct ||
-          (Ct = dn(
+      _n = Object(He.css)(
+        Et ||
+          (Et = hn(
             ['\n  @media (max-width: 600px) {\n    display: none;\n  }\n'],
             ['\n  @media (max-width: 600px) {\n    display: none;\n  }\n']
           ))
       ),
-      _n = jt('div')(
-        Et ||
-          (Et = dn(
+      bn = Rt('div')(
+        St ||
+          (St = hn(
             ['\n  overflow-x: auto;\n  margin-top: 16px;\n'],
             ['\n  overflow-x: auto;\n  margin-top: 16px;\n']
           ))
       ),
-      bn = jt('table')(
-        St ||
-          (St = dn(
+      gn = Rt('table')(
+        Pt ||
+          (Pt = hn(
             ['\n  border-collapse: collapse;\n  font-size: 12px;\n'],
             ['\n  border-collapse: collapse;\n  font-size: 12px;\n']
           ))
       ),
-      vn = jt('th')(
-        Pt ||
-          (Pt = dn(
+      vn = Rt('th')(
+        Ot ||
+          (Ot = hn(
             [
               '\n  background: #f7f8fa;\n  color: #1f4160;\n  font-weight: 600;\n  text-align: left;\n  border-width: 2px;\n'
             ],
@@ -6301,27 +6316,27 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      gn = jt('th')(
-        Ot ||
-          (Ot = dn(
+      yn = Rt('th')(
+        Tt ||
+          (Tt = hn(
             ['\n  font-weight: normal;\n  text-align: left;\n'],
             ['\n  font-weight: normal;\n  text-align: left;\n']
           ))
       ),
-      yn = jt('tr')(
-        Tt ||
-          (Tt = dn(
-            [
-              '\n  th,\n  td {\n    vertical-align: top;\n    padding: 8px 12px;\n    border: 1px solid rgba(67, 90, 111, 0.114);\n  }\n  td {\n    border-top: none;\n  }\n'
-            ],
-            [
-              '\n  th,\n  td {\n    vertical-align: top;\n    padding: 8px 12px;\n    border: 1px solid rgba(67, 90, 111, 0.114);\n  }\n  td {\n    border-top: none;\n  }\n'
-            ]
-          ))
-      ),
-      wn = jt('td')(
+      wn = Rt('tr')(
         Nt ||
-          (Nt = dn(
+          (Nt = hn(
+            [
+              '\n  th,\n  td {\n    vertical-align: top;\n    padding: 8px 12px;\n    border: 1px solid rgba(67, 90, 111, 0.114);\n  }\n  td {\n    border-top: none;\n  }\n'
+            ],
+            [
+              '\n  th,\n  td {\n    vertical-align: top;\n    padding: 8px 12px;\n    border: 1px solid rgba(67, 90, 111, 0.114);\n  }\n  td {\n    border-top: none;\n  }\n'
+            ]
+          ))
+      ),
+      An = Rt('td')(
+        Dt ||
+          (Dt = hn(
             [
               '\n  input {\n    vertical-align: middle;\n  }\n  label {\n    display: block;\n    margin-bottom: 4px;\n    white-space: nowrap;\n  }\n'
             ],
@@ -6330,7 +6345,7 @@ var consentManager = (function(e) {
             ]
           ))
       ),
-      An = (function(e) {
+      kn = (function(e) {
         function t() {
           var t = (null !== e && e.apply(this, arguments)) || this
           return (
@@ -6357,7 +6372,7 @@ var consentManager = (function(e) {
           )
         }
         return (
-          hn(t, e),
+          mn(t, e),
           (t.prototype.render = function() {
             var e = this,
               t = this.props,
@@ -6377,8 +6392,8 @@ var consentManager = (function(e) {
               m = t.preferencesDialogTemplate,
               _ = m,
               b = _.headings,
-              v = _.checkboxes,
-              g = _.actionButtons,
+              g = _.checkboxes,
+              v = _.actionButtons,
               y =
                 null == m
                   ? void 0
@@ -6406,29 +6421,29 @@ var consentManager = (function(e) {
               x = ze.createElement(
                 'div',
                 null,
-                ze.createElement(Lt, { type: 'button', onClick: r }, g.cancelValue),
-                ze.createElement(Bt, { type: 'submit' }, g.saveValue)
+                ze.createElement(Bt, { type: 'button', onClick: r }, v.cancelValue),
+                ze.createElement(Ut, { type: 'submit' }, v.saveValue)
               )
             return ze.createElement(
-              pn,
+              dn,
               { innerRef: n, title: p, buttons: x, onCancel: r, onSubmit: this.handleSubmit },
               d,
               ze.createElement(
-                _n,
+                bn,
                 null,
                 ze.createElement(
-                  bn,
+                  gn,
                   null,
                   ze.createElement(
                     'thead',
                     null,
                     ze.createElement(
-                      yn,
+                      wn,
                       null,
                       ze.createElement(vn, { scope: 'col' }, b.allowValue),
                       ze.createElement(vn, { scope: 'col' }, b.categoryValue),
                       ze.createElement(vn, { scope: 'col' }, b.purposeValue),
-                      ze.createElement(vn, { scope: 'col', className: mn }, b.toolsValue)
+                      ze.createElement(vn, { scope: 'col', className: _n }, b.toolsValue)
                     )
                   ),
                   ze.createElement(
@@ -6439,10 +6454,10 @@ var consentManager = (function(e) {
                         ze.Fragment,
                         null,
                         ze.createElement(
-                          yn,
+                          wn,
                           null,
                           ze.createElement(
-                            wn,
+                            An,
                             null,
                             ze.createElement(
                               'label',
@@ -6457,7 +6472,7 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.yesValue
+                              g.yesValue
                             ),
                             ze.createElement(
                               'label',
@@ -6472,19 +6487,19 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.noValue
+                              g.noValue
                             )
                           ),
-                          ze.createElement(gn, { scope: 'row' }, null == y ? void 0 : y.name),
+                          ze.createElement(yn, { scope: 'row' }, null == y ? void 0 : y.name),
                           ze.createElement(
                             'td',
                             null,
                             ze.createElement('p', null, null == y ? void 0 : y.description),
-                            ze.createElement('p', { className: mn }, null == y ? void 0 : y.example)
+                            ze.createElement('p', { className: _n }, null == y ? void 0 : y.example)
                           ),
                           ze.createElement(
                             'td',
-                            { className: mn },
+                            { className: _n },
                             i
                               .map(function(e) {
                                 return e.name
@@ -6493,10 +6508,10 @@ var consentManager = (function(e) {
                           )
                         ),
                         ze.createElement(
-                          yn,
+                          wn,
                           null,
                           ze.createElement(
-                            wn,
+                            An,
                             null,
                             ze.createElement(
                               'label',
@@ -6511,7 +6526,7 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.yesValue
+                              g.yesValue
                             ),
                             ze.createElement(
                               'label',
@@ -6526,19 +6541,19 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.noValue
+                              g.noValue
                             )
                           ),
-                          ze.createElement(gn, { scope: 'row' }, null == w ? void 0 : w.name),
+                          ze.createElement(yn, { scope: 'row' }, null == w ? void 0 : w.name),
                           ze.createElement(
                             'td',
                             null,
                             ze.createElement('p', null, null == w ? void 0 : w.description),
-                            ze.createElement('p', { className: mn }, null == w ? void 0 : w.example)
+                            ze.createElement('p', { className: _n }, null == w ? void 0 : w.example)
                           ),
                           ze.createElement(
                             'td',
-                            { className: mn },
+                            { className: _n },
                             o
                               .map(function(e) {
                                 return e.name
@@ -6547,10 +6562,10 @@ var consentManager = (function(e) {
                           )
                         ),
                         ze.createElement(
-                          yn,
+                          wn,
                           null,
                           ze.createElement(
-                            wn,
+                            An,
                             null,
                             ze.createElement(
                               'label',
@@ -6565,7 +6580,7 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.yesValue
+                              g.yesValue
                             ),
                             ze.createElement(
                               'label',
@@ -6580,19 +6595,19 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.noValue
+                              g.noValue
                             )
                           ),
-                          ze.createElement(gn, { scope: 'row' }, null == A ? void 0 : A.name),
+                          ze.createElement(yn, { scope: 'row' }, null == A ? void 0 : A.name),
                           ze.createElement(
                             'td',
                             null,
                             ze.createElement('p', null, null == A ? void 0 : A.description),
-                            ze.createElement('p', { className: mn }, null == A ? void 0 : A.example)
+                            ze.createElement('p', { className: _n }, null == A ? void 0 : A.example)
                           ),
                           ze.createElement(
                             'td',
-                            { className: mn },
+                            { className: _n },
                             a
                               .map(function(e) {
                                 return e.name
@@ -6608,10 +6623,10 @@ var consentManager = (function(e) {
                           o = r.integrations,
                           a = r.purpose
                         return ze.createElement(
-                          yn,
+                          wn,
                           { key: n },
                           ze.createElement(
-                            wn,
+                            An,
                             null,
                             ze.createElement(
                               'label',
@@ -6626,7 +6641,7 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.yesValue
+                              g.yesValue
                             ),
                             ze.createElement(
                               'label',
@@ -6641,14 +6656,14 @@ var consentManager = (function(e) {
                                 required: !0
                               }),
                               ' ',
-                              v.noValue
+                              g.noValue
                             )
                           ),
-                          ze.createElement(gn, { scope: 'row' }, n),
+                          ze.createElement(yn, { scope: 'row' }, n),
                           ze.createElement('td', null, ze.createElement('p', null, a)),
                           ze.createElement(
                             'td',
-                            { className: mn },
+                            { className: _n },
                             f
                               .filter(function(e) {
                                 return o.includes(e.id)
@@ -6661,17 +6676,17 @@ var consentManager = (function(e) {
                         )
                       }),
                     ze.createElement(
-                      yn,
+                      wn,
                       null,
                       ze.createElement('td', null, 'N/A'),
-                      ze.createElement(gn, { scope: 'row' }, null == k ? void 0 : k.name),
+                      ze.createElement(yn, { scope: 'row' }, null == k ? void 0 : k.name),
                       ze.createElement(
                         'td',
                         null,
                         ze.createElement('p', null, null == k ? void 0 : k.description),
                         ze.createElement('p', null, null == k ? void 0 : k.example)
                       ),
-                      ze.createElement('td', { className: mn })
+                      ze.createElement('td', { className: _n })
                     )
                   )
                 )
@@ -6683,7 +6698,7 @@ var consentManager = (function(e) {
           t
         )
       })(le),
-      kn = (function() {
+      xn = (function() {
         var e = function(t, n) {
           return (e =
             Object.setPrototypeOf ||
@@ -6703,7 +6718,7 @@ var consentManager = (function(e) {
             (t.prototype = null === n ? Object.create(n) : ((r.prototype = n.prototype), new r()))
         }
       })(),
-      xn = (function(e) {
+      Cn = (function(e) {
         function t() {
           var t = (null !== e && e.apply(this, arguments)) || this
           return (
@@ -6719,7 +6734,7 @@ var consentManager = (function(e) {
           )
         }
         return (
-          kn(t, e),
+          xn(t, e),
           (t.prototype.render = function() {
             var e = this.props,
               t = e.innerRef,
@@ -6731,18 +6746,18 @@ var consentManager = (function(e) {
                 'div',
                 null,
                 ze.createElement(
-                  Lt,
+                  Bt,
                   { type: 'button', onClick: n },
                   null == a ? void 0 : a.cancelDialogButtons.backValue
                 ),
                 ze.createElement(
-                  Ut,
+                  Ft,
                   { type: 'submit' },
                   null == a ? void 0 : a.cancelDialogButtons.cancelValue
                 )
               )
             return ze.createElement(
-              pn,
+              dn,
               { innerRef: t, title: r, buttons: i, onSubmit: this.handleSubmit, width: '500px' },
               o
             )
@@ -6757,8 +6772,8 @@ var consentManager = (function(e) {
           t
         )
       })(le),
-      Cn = ['Advertising', 'Tag Managers'],
-      En = [
+      En = ['Advertising', 'Tag Managers'],
+      Sn = [
         'CRM',
         'Customer Success',
         'Deep Linking',
@@ -6769,14 +6784,14 @@ var consentManager = (function(e) {
         'SMS & Push Notifications',
         'Security & Fraud'
       ],
-      Sn = new Fe.a()
-    function Pn() {
-      Sn.emit('openDialog')
+      Pn = new Fe.a()
+    function On() {
+      Pn.emit('openDialog')
     }
     !(function(e) {
       ;(e.ACCEPT = 'accept'), (e.DENY = 'deny'), (e.DISMISS = 'dismiss')
-    })(Dt || (Dt = {}))
-    var On = function(e) {
+    })(jt || (jt = {}))
+    var Tn = function(e) {
         var t = ze.useState(
             e.workspaceAddedNewDestinations && 'ask' === e.defaultDestinationBehavior
           ),
@@ -6797,11 +6812,11 @@ var consentManager = (function(e) {
                 n = [],
                 r = [],
                 o = function(e) {
-                  Cn.find(function(t) {
+                  En.find(function(t) {
                     return t === e.category
                   })
                     ? n.push(e)
-                    : En.find(function(t) {
+                    : Sn.find(function(t) {
                         return t === e.category
                       })
                     ? r.push(e)
@@ -6826,13 +6841,13 @@ var consentManager = (function(e) {
           b = function() {
             e.setPreferences(e.preferences), e.saveConsent()
           },
-          v = function() {
+          g = function() {
             var t = Object.keys(e.preferences).reduce(function(e, t) {
               return (e[t] = !1), e
             }, {})
             return e.setPreferences(t), e.saveConsent()
           },
-          g = function() {
+          v = function() {
             return r(!0)
           },
           y = function(t) {
@@ -6846,12 +6861,12 @@ var consentManager = (function(e) {
           }
         ze.useEffect(function() {
           return (
-            Sn.on('openDialog', g),
+            Pn.on('openDialog', v),
             e.isConsentRequired &&
               e.implyConsentOnInteraction &&
               document.body.addEventListener('click', y, !1),
             function() {
-              Sn.removeListener('openDialog', g), document.body.removeEventListener('click', y, !1)
+              Pn.removeListener('openDialog', v), document.body.removeEventListener('click', y, !1)
             }
           )
         }),
@@ -6867,14 +6882,14 @@ var consentManager = (function(e) {
           a &&
             e.isConsentRequired &&
             e.newDestinations.length > 0 &&
-            ze.createElement(Jt, {
+            ze.createElement(Zt, {
               innerRef: function(e) {
                 return (l = { current: e })
               },
               onClose: function() {
-                if (void 0 === e.closeBehavior || e.closeBehavior === Dt.DISMISS) return i(!1)
-                if (e.closeBehavior === Dt.ACCEPT) return b()
-                if (e.closeBehavior === Dt.DENY) return v()
+                if (void 0 === e.closeBehavior || e.closeBehavior === jt.DISMISS) return i(!1)
+                if (e.closeBehavior === jt.ACCEPT) return b()
+                if (e.closeBehavior === jt.DENY) return g()
                 var t = e.closeBehavior(e.preferences)
                 return e.setPreferences(t), e.saveConsent(), i(!1)
               },
@@ -6887,12 +6902,12 @@ var consentManager = (function(e) {
               textColor: e.bannerTextColor,
               backgroundColor: e.bannerBackgroundColor,
               onAcceptAll: b,
-              onDenyAll: v,
+              onDenyAll: g,
               hideCloseButton: e.bannerHideCloseButton,
               asModal: e.bannerAsModal
             }),
           n &&
-            ze.createElement(An, {
+            ze.createElement(kn, {
               customCategories: e.customCategories,
               destinations: e.destinations,
               preferences: e.preferences,
@@ -6920,7 +6935,7 @@ var consentManager = (function(e) {
               preferencesDialogTemplate: e.preferencesDialogTemplate
             }),
           c &&
-            ze.createElement(xn, {
+            ze.createElement(Cn, {
               innerRef: function(e) {
                 return (p = { current: e })
               },
@@ -6928,7 +6943,7 @@ var consentManager = (function(e) {
                 u(!1)
               },
               onConfirm: function() {
-                u(!1), r(!1), e.resetPreferences()
+                u(!1), r(!1), b()
               },
               title: e.cancelDialogTitle,
               content: e.cancelDialogContent,
@@ -6936,24 +6951,24 @@ var consentManager = (function(e) {
             })
         )
       },
-      Tn = n(7),
-      Nn = n.n(Tn),
-      Dn = n(18),
-      jn = n.n(Dn)
-    function Rn(e) {
-      var t = Nn.a.getJSON(e || 'tracking-preferences')
+      Nn = n(7),
+      Dn = n.n(Nn),
+      jn = n(18),
+      Rn = n.n(jn)
+    function zn(e) {
+      var t = Dn.a.getJSON(e || 'tracking-preferences')
       return t ? { destinationPreferences: t.destinations, customPreferences: t.custom } : {}
     }
-    var zn = new Ue.EventEmitter()
-    function Mn(e) {
+    var Mn = new Ue.EventEmitter()
+    function In(e) {
       return (
-        zn.on('preferencesSaved', e),
+        Mn.on('preferencesSaved', e),
         function() {
-          return zn.off('preferencesSaved', e)
+          return Mn.off('preferencesSaved', e)
         }
       )
     }
-    function In(e) {
+    function Ln(e) {
       var t = e.destinationPreferences,
         n = e.customPreferences,
         r = e.cookieDomain,
@@ -6962,113 +6977,113 @@ var consentManager = (function(e) {
         i = window
       i.analytics &&
         i.analytics.identify({ destinationTrackingPreferences: t, customTrackingPreferences: n })
-      var s = r || jn()(window.location.href),
+      var s = r || Rn()(window.location.href),
         c = a || 365,
         u = { version: 1, destinations: t, custom: n }
-      Nn.a.set(o || 'tracking-preferences', u, { expires: c, domain: s }),
-        zn.emit('preferencesSaved', { destinationPreferences: t, customPreferences: n })
+      Dn.a.set(o || 'tracking-preferences', u, { expires: c, domain: s }),
+        Mn.emit('preferencesSaved', { destinationPreferences: t, customPreferences: n })
     }
-    var Ln = n(19),
-      Bn = n.n(Ln)
-    var Un = function(e, t) {
+    var Bn = n(19),
+      Un = n.n(Bn)
+    var Fn = function(e, t) {
         for (var n = -1, r = t.length, o = e.length; ++n < r; ) e[o + n] = t[n]
         return e
       },
-      Fn = n(0),
-      Hn = Fn.a.Symbol,
-      Yn = Object.prototype,
-      Kn = Yn.hasOwnProperty,
-      Gn = Yn.toString,
-      Wn = Hn ? Hn.toStringTag : void 0
-    var Vn = function(e) {
-        var t = Kn.call(e, Wn),
-          n = e[Wn]
+      Hn = n(0),
+      Yn = Hn.a.Symbol,
+      Kn = Object.prototype,
+      Gn = Kn.hasOwnProperty,
+      Wn = Kn.toString,
+      Vn = Yn ? Yn.toStringTag : void 0
+    var qn = function(e) {
+        var t = Gn.call(e, Vn),
+          n = e[Vn]
         try {
-          e[Wn] = void 0
+          e[Vn] = void 0
           var r = !0
         } catch (e) {}
-        var o = Gn.call(e)
-        return r && (t ? (e[Wn] = n) : delete e[Wn]), o
+        var o = Wn.call(e)
+        return r && (t ? (e[Vn] = n) : delete e[Vn]), o
       },
-      qn = Object.prototype.toString
-    var Xn = function(e) {
-        return qn.call(e)
+      Xn = Object.prototype.toString
+    var $n = function(e) {
+        return Xn.call(e)
       },
-      $n = Hn ? Hn.toStringTag : void 0
-    var Jn = function(e) {
+      Jn = Yn ? Yn.toStringTag : void 0
+    var Zn = function(e) {
       return null == e
         ? void 0 === e
           ? '[object Undefined]'
           : '[object Null]'
-        : $n && $n in Object(e)
-        ? Vn(e)
-        : Xn(e)
-    }
-    var Zn = function(e) {
-      return null != e && 'object' == typeof e
+        : Jn && Jn in Object(e)
+        ? qn(e)
+        : $n(e)
     }
     var Qn = function(e) {
-        return Zn(e) && '[object Arguments]' == Jn(e)
+      return null != e && 'object' == typeof e
+    }
+    var er = function(e) {
+        return Qn(e) && '[object Arguments]' == Zn(e)
       },
-      er = Object.prototype,
-      tr = er.hasOwnProperty,
-      nr = er.propertyIsEnumerable,
-      rr = Qn(
+      tr = Object.prototype,
+      nr = tr.hasOwnProperty,
+      rr = tr.propertyIsEnumerable,
+      or = er(
         (function() {
           return arguments
         })()
       )
-        ? Qn
+        ? er
         : function(e) {
-            return Zn(e) && tr.call(e, 'callee') && !nr.call(e, 'callee')
+            return Qn(e) && nr.call(e, 'callee') && !rr.call(e, 'callee')
           },
-      or = Array.isArray,
-      ar = Hn ? Hn.isConcatSpreadable : void 0
-    var ir = function(e) {
-      return or(e) || rr(e) || !!(ar && e && e[ar])
+      ar = Array.isArray,
+      ir = Yn ? Yn.isConcatSpreadable : void 0
+    var sr = function(e) {
+      return ar(e) || or(e) || !!(ir && e && e[ir])
     }
-    var sr = function e(t, n, r, o, a) {
+    var cr = function e(t, n, r, o, a) {
       var i = -1,
         s = t.length
-      for (r || (r = ir), a || (a = []); ++i < s; ) {
+      for (r || (r = sr), a || (a = []); ++i < s; ) {
         var c = t[i]
-        n > 0 && r(c) ? (n > 1 ? e(c, n - 1, r, o, a) : Un(a, c)) : o || (a[a.length] = c)
+        n > 0 && r(c) ? (n > 1 ? e(c, n - 1, r, o, a) : Fn(a, c)) : o || (a[a.length] = c)
       }
       return a
     }
-    var cr = function(e) {
-      return (null == e ? 0 : e.length) ? sr(e, 1) : []
+    var ur = function(e) {
+      return (null == e ? 0 : e.length) ? cr(e, 1) : []
     }
-    var ur = function() {
+    var lr = function() {
       ;(this.__data__ = []), (this.size = 0)
     }
-    var lr = function(e, t) {
+    var fr = function(e, t) {
       return e === t || (e != e && t != t)
     }
-    var fr = function(e, t) {
-        for (var n = e.length; n--; ) if (lr(e[n][0], t)) return n
+    var pr = function(e, t) {
+        for (var n = e.length; n--; ) if (fr(e[n][0], t)) return n
         return -1
       },
-      pr = Array.prototype.splice
-    var dr = function(e) {
-      var t = this.__data__,
-        n = fr(t, e)
-      return !(n < 0) && (n == t.length - 1 ? t.pop() : pr.call(t, n, 1), --this.size, !0)
-    }
+      dr = Array.prototype.splice
     var hr = function(e) {
       var t = this.__data__,
-        n = fr(t, e)
-      return n < 0 ? void 0 : t[n][1]
+        n = pr(t, e)
+      return !(n < 0) && (n == t.length - 1 ? t.pop() : dr.call(t, n, 1), --this.size, !0)
     }
     var mr = function(e) {
-      return fr(this.__data__, e) > -1
+      var t = this.__data__,
+        n = pr(t, e)
+      return n < 0 ? void 0 : t[n][1]
     }
-    var _r = function(e, t) {
+    var _r = function(e) {
+      return pr(this.__data__, e) > -1
+    }
+    var br = function(e, t) {
       var n = this.__data__,
-        r = fr(n, e)
+        r = pr(n, e)
       return r < 0 ? (++this.size, n.push([e, t])) : (n[r][1] = t), this
     }
-    function br(e) {
+    function gr(e) {
       var t = -1,
         n = null == e ? 0 : e.length
       for (this.clear(); ++t < n; ) {
@@ -7076,34 +7091,34 @@ var consentManager = (function(e) {
         this.set(r[0], r[1])
       }
     }
-    ;(br.prototype.clear = ur),
-      (br.prototype.delete = dr),
-      (br.prototype.get = hr),
-      (br.prototype.has = mr),
-      (br.prototype.set = _r)
-    var vr = br
-    var gr = function() {
+    ;(gr.prototype.clear = lr),
+      (gr.prototype.delete = hr),
+      (gr.prototype.get = mr),
+      (gr.prototype.has = _r),
+      (gr.prototype.set = br)
+    var vr = gr
+    var yr = function() {
       ;(this.__data__ = new vr()), (this.size = 0)
     }
-    var yr = function(e) {
+    var wr = function(e) {
       var t = this.__data__,
         n = t.delete(e)
       return (this.size = t.size), n
     }
-    var wr = function(e) {
+    var Ar = function(e) {
       return this.__data__.get(e)
     }
-    var Ar = function(e) {
+    var kr = function(e) {
       return this.__data__.has(e)
     }
-    var kr = function(e) {
+    var xr = function(e) {
       var t = typeof e
       return null != e && ('object' == t || 'function' == t)
     }
-    var xr,
-      Cr = function(e) {
-        if (!kr(e)) return !1
-        var t = Jn(e)
+    var Cr,
+      Er = function(e) {
+        if (!xr(e)) return !1
+        var t = Zn(e)
         return (
           '[object Function]' == t ||
           '[object GeneratorFunction]' == t ||
@@ -7111,18 +7126,18 @@ var consentManager = (function(e) {
           '[object Proxy]' == t
         )
       },
-      Er = Fn.a['__core-js_shared__'],
-      Sr = (xr = /[^.]+$/.exec((Er && Er.keys && Er.keys.IE_PROTO) || ''))
-        ? 'Symbol(src)_1.' + xr
+      Sr = Hn.a['__core-js_shared__'],
+      Pr = (Cr = /[^.]+$/.exec((Sr && Sr.keys && Sr.keys.IE_PROTO) || ''))
+        ? 'Symbol(src)_1.' + Cr
         : ''
-    var Pr = function(e) {
-        return !!Sr && Sr in e
+    var Or = function(e) {
+        return !!Pr && Pr in e
       },
-      Or = Function.prototype.toString
-    var Tr = function(e) {
+      Tr = Function.prototype.toString
+    var Nr = function(e) {
         if (null != e) {
           try {
-            return Or.call(e)
+            return Tr.call(e)
           } catch (e) {}
           try {
             return e + ''
@@ -7130,60 +7145,61 @@ var consentManager = (function(e) {
         }
         return ''
       },
-      Nr = /^\[object .+?Constructor\]$/,
-      Dr = Function.prototype,
-      jr = Object.prototype,
-      Rr = Dr.toString,
-      zr = jr.hasOwnProperty,
-      Mr = RegExp(
+      Dr = /^\[object .+?Constructor\]$/,
+      jr = Function.prototype,
+      Rr = Object.prototype,
+      zr = jr.toString,
+      Mr = Rr.hasOwnProperty,
+      Ir = RegExp(
         '^' +
-          Rr.call(zr)
+          zr
+            .call(Mr)
             .replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
             .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') +
           '$'
       )
-    var Ir = function(e) {
-      return !(!kr(e) || Pr(e)) && (Cr(e) ? Mr : Nr).test(Tr(e))
-    }
-    var Lr = function(e, t) {
-      return null == e ? void 0 : e[t]
+    var Lr = function(e) {
+      return !(!xr(e) || Or(e)) && (Er(e) ? Ir : Dr).test(Nr(e))
     }
     var Br = function(e, t) {
-        var n = Lr(e, t)
-        return Ir(n) ? n : void 0
-      },
-      Ur = Br(Fn.a, 'Map'),
-      Fr = Br(Object, 'create')
-    var Hr = function() {
-      ;(this.__data__ = Fr ? Fr(null) : {}), (this.size = 0)
+      return null == e ? void 0 : e[t]
     }
-    var Yr = function(e) {
+    var Ur = function(e, t) {
+        var n = Br(e, t)
+        return Lr(n) ? n : void 0
+      },
+      Fr = Ur(Hn.a, 'Map'),
+      Hr = Ur(Object, 'create')
+    var Yr = function() {
+      ;(this.__data__ = Hr ? Hr(null) : {}), (this.size = 0)
+    }
+    var Kr = function(e) {
         var t = this.has(e) && delete this.__data__[e]
         return (this.size -= t ? 1 : 0), t
       },
-      Kr = Object.prototype.hasOwnProperty
-    var Gr = function(e) {
+      Gr = Object.prototype.hasOwnProperty
+    var Wr = function(e) {
         var t = this.__data__
-        if (Fr) {
+        if (Hr) {
           var n = t[e]
           return '__lodash_hash_undefined__' === n ? void 0 : n
         }
-        return Kr.call(t, e) ? t[e] : void 0
+        return Gr.call(t, e) ? t[e] : void 0
       },
-      Wr = Object.prototype.hasOwnProperty
-    var Vr = function(e) {
+      Vr = Object.prototype.hasOwnProperty
+    var qr = function(e) {
       var t = this.__data__
-      return Fr ? void 0 !== t[e] : Wr.call(t, e)
+      return Hr ? void 0 !== t[e] : Vr.call(t, e)
     }
-    var qr = function(e, t) {
+    var Xr = function(e, t) {
       var n = this.__data__
       return (
         (this.size += this.has(e) ? 0 : 1),
-        (n[e] = Fr && void 0 === t ? '__lodash_hash_undefined__' : t),
+        (n[e] = Hr && void 0 === t ? '__lodash_hash_undefined__' : t),
         this
       )
     }
-    function Xr(e) {
+    function $r(e) {
       var t = -1,
         n = null == e ? 0 : e.length
       for (this.clear(); ++t < n; ) {
@@ -7191,42 +7207,42 @@ var consentManager = (function(e) {
         this.set(r[0], r[1])
       }
     }
-    ;(Xr.prototype.clear = Hr),
-      (Xr.prototype.delete = Yr),
-      (Xr.prototype.get = Gr),
-      (Xr.prototype.has = Vr),
-      (Xr.prototype.set = qr)
-    var $r = Xr
-    var Jr = function() {
+    ;($r.prototype.clear = Yr),
+      ($r.prototype.delete = Kr),
+      ($r.prototype.get = Wr),
+      ($r.prototype.has = qr),
+      ($r.prototype.set = Xr)
+    var Jr = $r
+    var Zr = function() {
       ;(this.size = 0),
-        (this.__data__ = { hash: new $r(), map: new (Ur || vr)(), string: new $r() })
+        (this.__data__ = { hash: new Jr(), map: new (Fr || vr)(), string: new Jr() })
     }
-    var Zr = function(e) {
+    var Qr = function(e) {
       var t = typeof e
       return 'string' == t || 'number' == t || 'symbol' == t || 'boolean' == t
         ? '__proto__' !== e
         : null === e
     }
-    var Qr = function(e, t) {
+    var eo = function(e, t) {
       var n = e.__data__
-      return Zr(t) ? n['string' == typeof t ? 'string' : 'hash'] : n.map
-    }
-    var eo = function(e) {
-      var t = Qr(this, e).delete(e)
-      return (this.size -= t ? 1 : 0), t
+      return Qr(t) ? n['string' == typeof t ? 'string' : 'hash'] : n.map
     }
     var to = function(e) {
-      return Qr(this, e).get(e)
+      var t = eo(this, e).delete(e)
+      return (this.size -= t ? 1 : 0), t
     }
     var no = function(e) {
-      return Qr(this, e).has(e)
+      return eo(this, e).get(e)
     }
-    var ro = function(e, t) {
-      var n = Qr(this, e),
+    var ro = function(e) {
+      return eo(this, e).has(e)
+    }
+    var oo = function(e, t) {
+      var n = eo(this, e),
         r = n.size
       return n.set(e, t), (this.size += n.size == r ? 0 : 1), this
     }
-    function oo(e) {
+    function ao(e) {
       var t = -1,
         n = null == e ? 0 : e.length
       for (this.clear(); ++t < n; ) {
@@ -7234,52 +7250,52 @@ var consentManager = (function(e) {
         this.set(r[0], r[1])
       }
     }
-    ;(oo.prototype.clear = Jr),
-      (oo.prototype.delete = eo),
-      (oo.prototype.get = to),
-      (oo.prototype.has = no),
-      (oo.prototype.set = ro)
-    var ao = oo
-    var io = function(e, t) {
+    ;(ao.prototype.clear = Zr),
+      (ao.prototype.delete = to),
+      (ao.prototype.get = no),
+      (ao.prototype.has = ro),
+      (ao.prototype.set = oo)
+    var io = ao
+    var so = function(e, t) {
       var n = this.__data__
       if (n instanceof vr) {
         var r = n.__data__
-        if (!Ur || r.length < 199) return r.push([e, t]), (this.size = ++n.size), this
-        n = this.__data__ = new ao(r)
+        if (!Fr || r.length < 199) return r.push([e, t]), (this.size = ++n.size), this
+        n = this.__data__ = new io(r)
       }
       return n.set(e, t), (this.size = n.size), this
     }
-    function so(e) {
+    function co(e) {
       var t = (this.__data__ = new vr(e))
       this.size = t.size
     }
-    ;(so.prototype.clear = gr),
-      (so.prototype.delete = yr),
-      (so.prototype.get = wr),
-      (so.prototype.has = Ar),
-      (so.prototype.set = io)
-    var co = so
-    var uo = function(e) {
+    ;(co.prototype.clear = yr),
+      (co.prototype.delete = wr),
+      (co.prototype.get = Ar),
+      (co.prototype.has = kr),
+      (co.prototype.set = so)
+    var uo = co
+    var lo = function(e) {
       return this.__data__.set(e, '__lodash_hash_undefined__'), this
     }
-    var lo = function(e) {
+    var fo = function(e) {
       return this.__data__.has(e)
     }
-    function fo(e) {
+    function po(e) {
       var t = -1,
         n = null == e ? 0 : e.length
-      for (this.__data__ = new ao(); ++t < n; ) this.add(e[t])
+      for (this.__data__ = new io(); ++t < n; ) this.add(e[t])
     }
-    ;(fo.prototype.add = fo.prototype.push = uo), (fo.prototype.has = lo)
-    var po = fo
-    var ho = function(e, t) {
+    ;(po.prototype.add = po.prototype.push = lo), (po.prototype.has = fo)
+    var ho = po
+    var mo = function(e, t) {
       for (var n = -1, r = null == e ? 0 : e.length; ++n < r; ) if (t(e[n], n, e)) return !0
       return !1
     }
-    var mo = function(e, t) {
+    var _o = function(e, t) {
       return e.has(t)
     }
-    var _o = function(e, t, n, r, o, a) {
+    var bo = function(e, t, n, r, o, a) {
         var i = 1 & n,
           s = e.length,
           c = t.length
@@ -7289,7 +7305,7 @@ var consentManager = (function(e) {
         if (u && l) return u == t && l == e
         var f = -1,
           p = !0,
-          d = 2 & n ? new po() : void 0
+          d = 2 & n ? new ho() : void 0
         for (a.set(e, t), a.set(t, e); ++f < s; ) {
           var h = e[f],
             m = t[f]
@@ -7301,8 +7317,8 @@ var consentManager = (function(e) {
           }
           if (d) {
             if (
-              !ho(t, function(e, t) {
-                if (!mo(d, t) && (h === e || o(h, e, n, r, a))) return d.push(t)
+              !mo(t, function(e, t) {
+                if (!_o(d, t) && (h === e || o(h, e, n, r, a))) return d.push(t)
               })
             ) {
               p = !1
@@ -7315,7 +7331,7 @@ var consentManager = (function(e) {
         }
         return a.delete(e), a.delete(t), p
       },
-      bo = Fn.a.Uint8Array
+      go = Hn.a.Uint8Array
     var vo = function(e) {
       var t = -1,
         n = Array(e.size)
@@ -7326,7 +7342,7 @@ var consentManager = (function(e) {
         n
       )
     }
-    var go = function(e) {
+    var yo = function(e) {
         var t = -1,
           n = Array(e.size)
         return (
@@ -7336,19 +7352,19 @@ var consentManager = (function(e) {
           n
         )
       },
-      yo = Hn ? Hn.prototype : void 0,
-      wo = yo ? yo.valueOf : void 0
-    var Ao = function(e, t, n, r, o, a, i) {
+      wo = Yn ? Yn.prototype : void 0,
+      Ao = wo ? wo.valueOf : void 0
+    var ko = function(e, t, n, r, o, a, i) {
       switch (n) {
         case '[object DataView]':
           if (e.byteLength != t.byteLength || e.byteOffset != t.byteOffset) return !1
           ;(e = e.buffer), (t = t.buffer)
         case '[object ArrayBuffer]':
-          return !(e.byteLength != t.byteLength || !a(new bo(e), new bo(t)))
+          return !(e.byteLength != t.byteLength || !a(new go(e), new go(t)))
         case '[object Boolean]':
         case '[object Date]':
         case '[object Number]':
-          return lr(+e, +t)
+          return fr(+e, +t)
         case '[object Error]':
           return e.name == t.name && e.message == t.message
         case '[object RegExp]':
@@ -7358,140 +7374,140 @@ var consentManager = (function(e) {
           var s = vo
         case '[object Set]':
           var c = 1 & r
-          if ((s || (s = go), e.size != t.size && !c)) return !1
+          if ((s || (s = yo), e.size != t.size && !c)) return !1
           var u = i.get(e)
           if (u) return u == t
           ;(r |= 2), i.set(e, t)
-          var l = _o(s(e), s(t), r, o, a, i)
+          var l = bo(s(e), s(t), r, o, a, i)
           return i.delete(e), l
         case '[object Symbol]':
-          if (wo) return wo.call(e) == wo.call(t)
+          if (Ao) return Ao.call(e) == Ao.call(t)
       }
       return !1
     }
-    var ko = function(e, t, n) {
+    var xo = function(e, t, n) {
       var r = t(e)
-      return or(e) ? r : Un(r, n(e))
+      return ar(e) ? r : Fn(r, n(e))
     }
-    var xo = function(e, t) {
+    var Co = function(e, t) {
       for (var n = -1, r = null == e ? 0 : e.length, o = 0, a = []; ++n < r; ) {
         var i = e[n]
         t(i, n, e) && (a[o++] = i)
       }
       return a
     }
-    var Co = function() {
+    var Eo = function() {
         return []
       },
-      Eo = Object.prototype.propertyIsEnumerable,
-      So = Object.getOwnPropertySymbols,
-      Po = So
+      So = Object.prototype.propertyIsEnumerable,
+      Po = Object.getOwnPropertySymbols,
+      Oo = Po
         ? function(e) {
             return null == e
               ? []
               : ((e = Object(e)),
-                xo(So(e), function(t) {
-                  return Eo.call(e, t)
+                Co(Po(e), function(t) {
+                  return So.call(e, t)
                 }))
           }
-        : Co
-    var Oo = function(e, t) {
+        : Eo
+    var To = function(e, t) {
         for (var n = -1, r = Array(e); ++n < e; ) r[n] = t(n)
         return r
       },
-      To = n(1),
-      No = /^(?:0|[1-9]\d*)$/
-    var Do = function(e, t) {
+      No = n(1),
+      Do = /^(?:0|[1-9]\d*)$/
+    var jo = function(e, t) {
       var n = typeof e
       return (
         !!(t = null == t ? 9007199254740991 : t) &&
-        ('number' == n || ('symbol' != n && No.test(e))) &&
+        ('number' == n || ('symbol' != n && Do.test(e))) &&
         e > -1 &&
         e % 1 == 0 &&
         e < t
       )
     }
-    var jo = function(e) {
+    var Ro = function(e) {
         return 'number' == typeof e && e > -1 && e % 1 == 0 && e <= 9007199254740991
       },
-      Ro = {}
-    ;(Ro['[object Float32Array]'] = Ro['[object Float64Array]'] = Ro['[object Int8Array]'] = Ro[
+      zo = {}
+    ;(zo['[object Float32Array]'] = zo['[object Float64Array]'] = zo['[object Int8Array]'] = zo[
       '[object Int16Array]'
-    ] = Ro['[object Int32Array]'] = Ro['[object Uint8Array]'] = Ro[
+    ] = zo['[object Int32Array]'] = zo['[object Uint8Array]'] = zo[
       '[object Uint8ClampedArray]'
-    ] = Ro['[object Uint16Array]'] = Ro['[object Uint32Array]'] = !0),
-      (Ro['[object Arguments]'] = Ro['[object Array]'] = Ro['[object ArrayBuffer]'] = Ro[
+    ] = zo['[object Uint16Array]'] = zo['[object Uint32Array]'] = !0),
+      (zo['[object Arguments]'] = zo['[object Array]'] = zo['[object ArrayBuffer]'] = zo[
         '[object Boolean]'
-      ] = Ro['[object DataView]'] = Ro['[object Date]'] = Ro['[object Error]'] = Ro[
+      ] = zo['[object DataView]'] = zo['[object Date]'] = zo['[object Error]'] = zo[
         '[object Function]'
-      ] = Ro['[object Map]'] = Ro['[object Number]'] = Ro['[object Object]'] = Ro[
+      ] = zo['[object Map]'] = zo['[object Number]'] = zo['[object Object]'] = zo[
         '[object RegExp]'
-      ] = Ro['[object Set]'] = Ro['[object String]'] = Ro['[object WeakMap]'] = !1)
-    var zo = function(e) {
-      return Zn(e) && jo(e.length) && !!Ro[Jn(e)]
-    }
+      ] = zo['[object Set]'] = zo['[object String]'] = zo['[object WeakMap]'] = !1)
     var Mo = function(e) {
+      return Qn(e) && Ro(e.length) && !!zo[Zn(e)]
+    }
+    var Io = function(e) {
         return function(t) {
           return e(t)
         }
       },
-      Io = n(8),
-      Lo = Io.a && Io.a.isTypedArray,
-      Bo = Lo ? Mo(Lo) : zo,
-      Uo = Object.prototype.hasOwnProperty
-    var Fo = function(e, t) {
-        var n = or(e),
-          r = !n && rr(e),
-          o = !n && !r && Object(To.a)(e),
-          a = !n && !r && !o && Bo(e),
+      Lo = n(8),
+      Bo = Lo.a && Lo.a.isTypedArray,
+      Uo = Bo ? Io(Bo) : Mo,
+      Fo = Object.prototype.hasOwnProperty
+    var Ho = function(e, t) {
+        var n = ar(e),
+          r = !n && or(e),
+          o = !n && !r && Object(No.a)(e),
+          a = !n && !r && !o && Uo(e),
           i = n || r || o || a,
-          s = i ? Oo(e.length, String) : [],
+          s = i ? To(e.length, String) : [],
           c = s.length
         for (var u in e)
-          (!t && !Uo.call(e, u)) ||
+          (!t && !Fo.call(e, u)) ||
             (i &&
               ('length' == u ||
                 (o && ('offset' == u || 'parent' == u)) ||
                 (a && ('buffer' == u || 'byteLength' == u || 'byteOffset' == u)) ||
-                Do(u, c))) ||
+                jo(u, c))) ||
             s.push(u)
         return s
       },
-      Ho = Object.prototype
-    var Yo = function(e) {
+      Yo = Object.prototype
+    var Ko = function(e) {
       var t = e && e.constructor
-      return e === (('function' == typeof t && t.prototype) || Ho)
+      return e === (('function' == typeof t && t.prototype) || Yo)
     }
-    var Ko = (function(e, t) {
+    var Go = (function(e, t) {
         return function(n) {
           return e(t(n))
         }
       })(Object.keys, Object),
-      Go = Object.prototype.hasOwnProperty
-    var Wo = function(e) {
-      if (!Yo(e)) return Ko(e)
+      Wo = Object.prototype.hasOwnProperty
+    var Vo = function(e) {
+      if (!Ko(e)) return Go(e)
       var t = []
-      for (var n in Object(e)) Go.call(e, n) && 'constructor' != n && t.push(n)
+      for (var n in Object(e)) Wo.call(e, n) && 'constructor' != n && t.push(n)
       return t
     }
-    var Vo = function(e) {
-      return null != e && jo(e.length) && !Cr(e)
-    }
     var qo = function(e) {
-      return Vo(e) ? Fo(e) : Wo(e)
+      return null != e && Ro(e.length) && !Er(e)
     }
     var Xo = function(e) {
-        return ko(e, qo, Po)
+      return qo(e) ? Ho(e) : Vo(e)
+    }
+    var $o = function(e) {
+        return xo(e, Xo, Oo)
       },
-      $o = Object.prototype.hasOwnProperty
-    var Jo = function(e, t, n, r, o, a) {
+      Jo = Object.prototype.hasOwnProperty
+    var Zo = function(e, t, n, r, o, a) {
         var i = 1 & n,
-          s = Xo(e),
+          s = $o(e),
           c = s.length
-        if (c != Xo(t).length && !i) return !1
+        if (c != $o(t).length && !i) return !1
         for (var u = c; u--; ) {
           var l = s[u]
-          if (!(i ? l in t : $o.call(t, l))) return !1
+          if (!(i ? l in t : Jo.call(t, l))) return !1
         }
         var f = a.get(e),
           p = a.get(t)
@@ -7509,87 +7525,87 @@ var consentManager = (function(e) {
           h || (h = 'constructor' == l)
         }
         if (d && !h) {
-          var v = e.constructor,
-            g = t.constructor
-          v == g ||
+          var g = e.constructor,
+            v = t.constructor
+          g == v ||
             !('constructor' in e) ||
             !('constructor' in t) ||
-            ('function' == typeof v &&
-              v instanceof v &&
-              'function' == typeof g &&
-              g instanceof g) ||
+            ('function' == typeof g &&
+              g instanceof g &&
+              'function' == typeof v &&
+              v instanceof v) ||
             (d = !1)
         }
         return a.delete(e), a.delete(t), d
       },
-      Zo = Br(Fn.a, 'DataView'),
-      Qo = Br(Fn.a, 'Promise'),
-      ea = Br(Fn.a, 'Set'),
-      ta = Br(Fn.a, 'WeakMap'),
-      na = Tr(Zo),
-      ra = Tr(Ur),
-      oa = Tr(Qo),
-      aa = Tr(ea),
-      ia = Tr(ta),
-      sa = Jn
-    ;((Zo && '[object DataView]' != sa(new Zo(new ArrayBuffer(1)))) ||
-      (Ur && '[object Map]' != sa(new Ur())) ||
-      (Qo && '[object Promise]' != sa(Qo.resolve())) ||
-      (ea && '[object Set]' != sa(new ea())) ||
-      (ta && '[object WeakMap]' != sa(new ta()))) &&
-      (sa = function(e) {
-        var t = Jn(e),
+      Qo = Ur(Hn.a, 'DataView'),
+      ea = Ur(Hn.a, 'Promise'),
+      ta = Ur(Hn.a, 'Set'),
+      na = Ur(Hn.a, 'WeakMap'),
+      ra = Nr(Qo),
+      oa = Nr(Fr),
+      aa = Nr(ea),
+      ia = Nr(ta),
+      sa = Nr(na),
+      ca = Zn
+    ;((Qo && '[object DataView]' != ca(new Qo(new ArrayBuffer(1)))) ||
+      (Fr && '[object Map]' != ca(new Fr())) ||
+      (ea && '[object Promise]' != ca(ea.resolve())) ||
+      (ta && '[object Set]' != ca(new ta())) ||
+      (na && '[object WeakMap]' != ca(new na()))) &&
+      (ca = function(e) {
+        var t = Zn(e),
           n = '[object Object]' == t ? e.constructor : void 0,
-          r = n ? Tr(n) : ''
+          r = n ? Nr(n) : ''
         if (r)
           switch (r) {
-            case na:
-              return '[object DataView]'
             case ra:
-              return '[object Map]'
+              return '[object DataView]'
             case oa:
-              return '[object Promise]'
+              return '[object Map]'
             case aa:
-              return '[object Set]'
+              return '[object Promise]'
             case ia:
+              return '[object Set]'
+            case sa:
               return '[object WeakMap]'
           }
         return t
       })
-    var ca = sa,
-      ua = Object.prototype.hasOwnProperty
-    var la = function(e, t, n, r, o, a) {
-      var i = or(e),
-        s = or(t),
-        c = i ? '[object Array]' : ca(e),
-        u = s ? '[object Array]' : ca(t),
+    var ua = ca,
+      la = Object.prototype.hasOwnProperty
+    var fa = function(e, t, n, r, o, a) {
+      var i = ar(e),
+        s = ar(t),
+        c = i ? '[object Array]' : ua(e),
+        u = s ? '[object Array]' : ua(t),
         l = '[object Object]' == (c = '[object Arguments]' == c ? '[object Object]' : c),
         f = '[object Object]' == (u = '[object Arguments]' == u ? '[object Object]' : u),
         p = c == u
-      if (p && Object(To.a)(e)) {
-        if (!Object(To.a)(t)) return !1
+      if (p && Object(No.a)(e)) {
+        if (!Object(No.a)(t)) return !1
         ;(i = !0), (l = !1)
       }
       if (p && !l)
-        return a || (a = new co()), i || Bo(e) ? _o(e, t, n, r, o, a) : Ao(e, t, c, n, r, o, a)
+        return a || (a = new uo()), i || Uo(e) ? bo(e, t, n, r, o, a) : ko(e, t, c, n, r, o, a)
       if (!(1 & n)) {
-        var d = l && ua.call(e, '__wrapped__'),
-          h = f && ua.call(t, '__wrapped__')
+        var d = l && la.call(e, '__wrapped__'),
+          h = f && la.call(t, '__wrapped__')
         if (d || h) {
           var m = d ? e.value() : e,
             _ = h ? t.value() : t
-          return a || (a = new co()), o(m, _, n, r, a)
+          return a || (a = new uo()), o(m, _, n, r, a)
         }
       }
-      return !!p && (a || (a = new co()), Jo(e, t, n, r, o, a))
+      return !!p && (a || (a = new uo()), Zo(e, t, n, r, o, a))
     }
-    var fa = function e(t, n, r, o, a) {
+    var pa = function e(t, n, r, o, a) {
       return (
         t === n ||
-        (null == t || null == n || (!Zn(t) && !Zn(n)) ? t != t && n != n : la(t, n, r, o, e, a))
+        (null == t || null == n || (!Qn(t) && !Qn(n)) ? t != t && n != n : fa(t, n, r, o, e, a))
       )
     }
-    var pa = function(e, t, n, r) {
+    var da = function(e, t, n, r) {
       var o = n.length,
         a = o,
         i = !r
@@ -7605,51 +7621,51 @@ var consentManager = (function(e) {
         if (i && s[2]) {
           if (void 0 === u && !(c in e)) return !1
         } else {
-          var f = new co()
+          var f = new uo()
           if (r) var p = r(u, l, c, e, t, f)
-          if (!(void 0 === p ? fa(l, u, 3, r, f) : p)) return !1
+          if (!(void 0 === p ? pa(l, u, 3, r, f) : p)) return !1
         }
       }
       return !0
     }
-    var da = function(e) {
-      return e == e && !kr(e)
-    }
     var ha = function(e) {
-      for (var t = qo(e), n = t.length; n--; ) {
+      return e == e && !xr(e)
+    }
+    var ma = function(e) {
+      for (var t = Xo(e), n = t.length; n--; ) {
         var r = t[n],
           o = e[r]
-        t[n] = [r, o, da(o)]
+        t[n] = [r, o, ha(o)]
       }
       return t
     }
-    var ma = function(e, t) {
+    var _a = function(e, t) {
       return function(n) {
         return null != n && n[e] === t && (void 0 !== t || e in Object(n))
       }
     }
-    var _a = function(e) {
-      var t = ha(e)
+    var ba = function(e) {
+      var t = ma(e)
       return 1 == t.length && t[0][2]
-        ? ma(t[0][0], t[0][1])
+        ? _a(t[0][0], t[0][1])
         : function(n) {
-            return n === e || pa(n, e, t)
+            return n === e || da(n, e, t)
           }
     }
-    var ba = function(e) {
-        return 'symbol' == typeof e || (Zn(e) && '[object Symbol]' == Jn(e))
+    var ga = function(e) {
+        return 'symbol' == typeof e || (Qn(e) && '[object Symbol]' == Zn(e))
       },
       va = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
-      ga = /^\w*$/
-    var ya = function(e, t) {
-      if (or(e)) return !1
+      ya = /^\w*$/
+    var wa = function(e, t) {
+      if (ar(e)) return !1
       var n = typeof e
       return (
-        !('number' != n && 'symbol' != n && 'boolean' != n && null != e && !ba(e)) ||
-        ga.test(e) || !va.test(e) || (null != t && e in Object(t))
+        !('number' != n && 'symbol' != n && 'boolean' != n && null != e && !ga(e)) ||
+        ya.test(e) || !va.test(e) || (null != t && e in Object(t))
       )
     }
-    function wa(e, t) {
+    function Aa(e, t) {
       if ('function' != typeof e || (null != t && 'function' != typeof t))
         throw new TypeError('Expected a function')
       var n = function() {
@@ -7660,14 +7676,14 @@ var consentManager = (function(e) {
         var i = e.apply(this, r)
         return (n.cache = a.set(o, i) || a), i
       }
-      return (n.cache = new (wa.Cache || ao)()), n
+      return (n.cache = new (Aa.Cache || io)()), n
     }
-    wa.Cache = ao
-    var Aa = wa
-    var ka = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,
-      xa = /\\(\\)?/g,
-      Ca = (function(e) {
-        var t = Aa(e, function(e) {
+    Aa.Cache = io
+    var ka = Aa
+    var xa = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,
+      Ca = /\\(\\)?/g,
+      Ea = (function(e) {
+        var t = ka(e, function(e) {
             return 500 === n.size && n.clear(), e
           }),
           n = t.cache
@@ -7676,110 +7692,110 @@ var consentManager = (function(e) {
         var t = []
         return (
           46 === e.charCodeAt(0) && t.push(''),
-          e.replace(ka, function(e, n, r, o) {
-            t.push(r ? o.replace(xa, '$1') : n || e)
+          e.replace(xa, function(e, n, r, o) {
+            t.push(r ? o.replace(Ca, '$1') : n || e)
           }),
           t
         )
       })
-    var Ea = function(e, t) {
+    var Sa = function(e, t) {
         for (var n = -1, r = null == e ? 0 : e.length, o = Array(r); ++n < r; ) o[n] = t(e[n], n, e)
         return o
       },
-      Sa = Hn ? Hn.prototype : void 0,
-      Pa = Sa ? Sa.toString : void 0
-    var Oa = function e(t) {
+      Pa = Yn ? Yn.prototype : void 0,
+      Oa = Pa ? Pa.toString : void 0
+    var Ta = function e(t) {
       if ('string' == typeof t) return t
-      if (or(t)) return Ea(t, e) + ''
-      if (ba(t)) return Pa ? Pa.call(t) : ''
+      if (ar(t)) return Sa(t, e) + ''
+      if (ga(t)) return Oa ? Oa.call(t) : ''
       var n = t + ''
       return '0' == n && 1 / t == -1 / 0 ? '-0' : n
     }
-    var Ta = function(e) {
-      return null == e ? '' : Oa(e)
+    var Na = function(e) {
+      return null == e ? '' : Ta(e)
     }
-    var Na = function(e, t) {
-      return or(e) ? e : ya(e, t) ? [e] : Ca(Ta(e))
+    var Da = function(e, t) {
+      return ar(e) ? e : wa(e, t) ? [e] : Ea(Na(e))
     }
-    var Da = function(e) {
-      if ('string' == typeof e || ba(e)) return e
+    var ja = function(e) {
+      if ('string' == typeof e || ga(e)) return e
       var t = e + ''
       return '0' == t && 1 / e == -1 / 0 ? '-0' : t
     }
-    var ja = function(e, t) {
-      for (var n = 0, r = (t = Na(t, e)).length; null != e && n < r; ) e = e[Da(t[n++])]
+    var Ra = function(e, t) {
+      for (var n = 0, r = (t = Da(t, e)).length; null != e && n < r; ) e = e[ja(t[n++])]
       return n && n == r ? e : void 0
     }
-    var Ra = function(e, t, n) {
-      var r = null == e ? void 0 : ja(e, t)
+    var za = function(e, t, n) {
+      var r = null == e ? void 0 : Ra(e, t)
       return void 0 === r ? n : r
     }
-    var za = function(e, t) {
+    var Ma = function(e, t) {
       return null != e && t in Object(e)
     }
-    var Ma = function(e, t, n) {
-      for (var r = -1, o = (t = Na(t, e)).length, a = !1; ++r < o; ) {
-        var i = Da(t[r])
+    var Ia = function(e, t, n) {
+      for (var r = -1, o = (t = Da(t, e)).length, a = !1; ++r < o; ) {
+        var i = ja(t[r])
         if (!(a = null != e && n(e, i))) break
         e = e[i]
       }
       return a || ++r != o
         ? a
-        : !!(o = null == e ? 0 : e.length) && jo(o) && Do(i, o) && (or(e) || rr(e))
-    }
-    var Ia = function(e, t) {
-      return null != e && Ma(e, t, za)
+        : !!(o = null == e ? 0 : e.length) && Ro(o) && jo(i, o) && (ar(e) || or(e))
     }
     var La = function(e, t) {
-      return ya(e) && da(t)
-        ? ma(Da(e), t)
+      return null != e && Ia(e, t, Ma)
+    }
+    var Ba = function(e, t) {
+      return wa(e) && ha(t)
+        ? _a(ja(e), t)
         : function(n) {
-            var r = Ra(n, e)
-            return void 0 === r && r === t ? Ia(n, e) : fa(t, r, 3)
+            var r = za(n, e)
+            return void 0 === r && r === t ? La(n, e) : pa(t, r, 3)
           }
     }
-    var Ba = function(e) {
+    var Ua = function(e) {
       return e
     }
-    var Ua = function(e) {
+    var Fa = function(e) {
       return function(t) {
         return null == t ? void 0 : t[e]
       }
     }
-    var Fa = function(e) {
+    var Ha = function(e) {
       return function(t) {
-        return ja(t, e)
+        return Ra(t, e)
       }
     }
-    var Ha = function(e) {
-      return ya(e) ? Ua(Da(e)) : Fa(e)
-    }
     var Ya = function(e) {
+      return wa(e) ? Fa(ja(e)) : Ha(e)
+    }
+    var Ka = function(e) {
       return 'function' == typeof e
         ? e
         : null == e
-        ? Ba
+        ? Ua
         : 'object' == typeof e
-        ? or(e)
-          ? La(e[0], e[1])
-          : _a(e)
-        : Ha(e)
+        ? ar(e)
+          ? Ba(e[0], e[1])
+          : ba(e)
+        : Ya(e)
     }
-    var Ka = function(e, t) {
+    var Ga = function(e, t) {
       for (var n = -1, r = e.length, o = 0, a = []; ++n < r; ) {
         var i = e[n],
           s = t ? t(i) : i
-        if (!n || !lr(s, c)) {
+        if (!n || !fr(s, c)) {
           var c = s
           a[o++] = 0 === i ? 0 : i
         }
       }
       return a
     }
-    var Ga = function(e, t) {
-      return e && e.length ? Ka(e, Ya(t, 2)) : []
+    var Wa = function(e, t) {
+      return e && e.length ? Ga(e, Ka(t, 2)) : []
     }
-    var Wa = (function(e) {
+    var Va = (function(e) {
       return function(t, n, r) {
         for (var o = -1, a = Object(t), i = r(t), s = i.length; s--; ) {
           var c = i[e ? s : ++o]
@@ -7788,10 +7804,10 @@ var consentManager = (function(e) {
         return t
       }
     })()
-    var Va = (function(e, t) {
+    var qa = (function(e, t) {
       return function(n, r) {
         if (null == n) return n
-        if (!Vo(n)) return e(n, r)
+        if (!qo(n)) return e(n, r)
         for (
           var o = n.length, a = t ? o : -1, i = Object(n);
           (t ? a-- : ++a < o) && !1 !== r(i[a], a, i);
@@ -7800,33 +7816,33 @@ var consentManager = (function(e) {
         return n
       }
     })(function(e, t) {
-      return e && Wa(e, t, qo)
+      return e && Va(e, t, Xo)
     })
-    var qa = function(e, t) {
+    var Xa = function(e, t) {
       var n = -1,
-        r = Vo(e) ? Array(e.length) : []
+        r = qo(e) ? Array(e.length) : []
       return (
-        Va(e, function(e, o, a) {
+        qa(e, function(e, o, a) {
           r[++n] = t(e, o, a)
         }),
         r
       )
     }
-    var Xa = function(e, t) {
+    var $a = function(e, t) {
       var n = e.length
       for (e.sort(t); n--; ) e[n] = e[n].value
       return e
     }
-    var $a = function(e, t) {
+    var Ja = function(e, t) {
       if (e !== t) {
         var n = void 0 !== e,
           r = null === e,
           o = e == e,
-          a = ba(e),
+          a = ga(e),
           i = void 0 !== t,
           s = null === t,
           c = t == t,
-          u = ba(t)
+          u = ga(t)
         if (
           (!s && !u && !a && e > t) ||
           (a && i && c && !s && !u) ||
@@ -7846,39 +7862,39 @@ var consentManager = (function(e) {
       }
       return 0
     }
-    var Ja = function(e, t, n) {
+    var Za = function(e, t, n) {
       for (var r = -1, o = e.criteria, a = t.criteria, i = o.length, s = n.length; ++r < i; ) {
-        var c = $a(o[r], a[r])
+        var c = Ja(o[r], a[r])
         if (c) return r >= s ? c : c * ('desc' == n[r] ? -1 : 1)
       }
       return e.index - t.index
     }
-    var Za = function(e, t, n) {
+    var Qa = function(e, t, n) {
       t = t.length
-        ? Ea(t, function(e) {
-            return or(e)
+        ? Sa(t, function(e) {
+            return ar(e)
               ? function(t) {
-                  return ja(t, 1 === e.length ? e[0] : e)
+                  return Ra(t, 1 === e.length ? e[0] : e)
                 }
               : e
           })
-        : [Ba]
+        : [Ua]
       var r = -1
-      t = Ea(t, Mo(Ya))
-      var o = qa(e, function(e, n, o) {
+      t = Sa(t, Io(Ka))
+      var o = Xa(e, function(e, n, o) {
         return {
-          criteria: Ea(t, function(t) {
+          criteria: Sa(t, function(t) {
             return t(e)
           }),
           index: ++r,
           value: e
         }
       })
-      return Xa(o, function(e, t) {
-        return Ja(e, t, n)
+      return $a(o, function(e, t) {
+        return Za(e, t, n)
       })
     }
-    var Qa = function(e, t, n) {
+    var ei = function(e, t, n) {
         switch (n.length) {
           case 0:
             return e.call(t)
@@ -7891,69 +7907,69 @@ var consentManager = (function(e) {
         }
         return e.apply(t, n)
       },
-      ei = Math.max
-    var ti = function(e, t, n) {
+      ti = Math.max
+    var ni = function(e, t, n) {
       return (
-        (t = ei(void 0 === t ? e.length - 1 : t, 0)),
+        (t = ti(void 0 === t ? e.length - 1 : t, 0)),
         function() {
-          for (var r = arguments, o = -1, a = ei(r.length - t, 0), i = Array(a); ++o < a; )
+          for (var r = arguments, o = -1, a = ti(r.length - t, 0), i = Array(a); ++o < a; )
             i[o] = r[t + o]
           o = -1
           for (var s = Array(t + 1); ++o < t; ) s[o] = r[o]
-          return (s[t] = n(i)), Qa(e, this, s)
+          return (s[t] = n(i)), ei(e, this, s)
         }
       )
     }
-    var ni = function(e) {
+    var ri = function(e) {
         return function() {
           return e
         }
       },
-      ri = (function() {
+      oi = (function() {
         try {
-          var e = Br(Object, 'defineProperty')
+          var e = Ur(Object, 'defineProperty')
           return e({}, '', {}), e
         } catch (e) {}
       })(),
-      oi = ri
+      ai = oi
         ? function(e, t) {
-            return ri(e, 'toString', {
+            return oi(e, 'toString', {
               configurable: !0,
               enumerable: !1,
-              value: ni(t),
+              value: ri(t),
               writable: !0
             })
           }
-        : Ba,
-      ai = Date.now
-    var ii = (function(e) {
+        : Ua,
+      ii = Date.now
+    var si = (function(e) {
       var t = 0,
         n = 0
       return function() {
-        var r = ai(),
+        var r = ii(),
           o = 16 - (r - n)
         if (((n = r), o > 0)) {
           if (++t >= 800) return arguments[0]
         } else t = 0
         return e.apply(void 0, arguments)
       }
-    })(oi)
-    var si = function(e, t, n) {
-        if (!kr(n)) return !1
+    })(ai)
+    var ci = function(e, t, n) {
+        if (!xr(n)) return !1
         var r = typeof t
-        return !!('number' == r ? Vo(n) && Do(t, n.length) : 'string' == r && t in n) && lr(n[t], e)
+        return !!('number' == r ? qo(n) && jo(t, n.length) : 'string' == r && t in n) && fr(n[t], e)
       },
-      ci = (function(e, t) {
-        return ii(ti(e, t, Ba), e + '')
+      ui = (function(e, t) {
+        return si(ni(e, t, Ua), e + '')
       })(function(e, t) {
         if (null == e) return []
         var n = t.length
         return (
-          n > 1 && si(e, t[0], t[1]) ? (t = []) : n > 2 && si(t[0], t[1], t[2]) && (t = [t[0]]),
-          Za(e, sr(t, 1), [])
+          n > 1 && ci(e, t[0], t[1]) ? (t = []) : n > 2 && ci(t[0], t[1], t[2]) && (t = [t[0]]),
+          Qa(e, cr(t, 1), [])
         )
       }),
-      ui = function(e, t, n, r) {
+      li = function(e, t, n, r) {
         return new (n || (n = Promise))(function(o, a) {
           function i(e) {
             try {
@@ -7983,7 +7999,7 @@ var consentManager = (function(e) {
           c((r = r.apply(e, t || [])).next())
         })
       },
-      li = function(e, t) {
+      fi = function(e, t) {
         var n,
           r,
           o,
@@ -8071,13 +8087,13 @@ var consentManager = (function(e) {
           }
         }
       }
-    function fi(e, t) {
-      return ui(this, void 0, void 0, function() {
+    function pi(e, t) {
+      return li(this, void 0, void 0, function() {
         var n, r, o, a, i
-        return li(this, function(s) {
+        return fi(this, function(s) {
           switch (s.label) {
             case 0:
-              return [4, Bn()('https://' + e + '/v1/projects/' + t + '/integrations')]
+              return [4, Un()('https://' + e + '/v1/projects/' + t + '/integrations')]
             case 1:
               if (!(n = s.sent()).ok)
                 throw new Error(
@@ -8097,27 +8113,27 @@ var consentManager = (function(e) {
         })
       })
     }
-    function pi(e, t) {
-      return ui(this, void 0, void 0, function() {
+    function di(e, t) {
+      return li(this, void 0, void 0, function() {
         var n, r, o, a, i, s
-        return li(this, function(c) {
+        return fi(this, function(c) {
           switch (c.label) {
             case 0:
-              for (n = [], r = 0, o = t; r < o.length; r++) (a = o[r]), n.push(fi(e, a))
-              return (s = cr), [4, Promise.all(n)]
+              for (n = [], r = 0, o = t; r < o.length; r++) (a = o[r]), n.push(pi(e, a))
+              return (s = ur), [4, Promise.all(n)]
             case 1:
               return (
                 (i = (i = s.apply(void 0, [c.sent()])).filter(function(e) {
                   return 'Repeater' !== e.id
                 })),
-                (i = ci(i, ['id'])),
-                [2, (i = Ga(i, 'id'))]
+                (i = ui(i, ['id'])),
+                [2, (i = Wa(i, 'id'))]
               )
           }
         })
       })
     }
-    function di(e) {
+    function hi(e) {
       var t = e.writeKey,
         n = e.destinations,
         r = e.destinationPreferences,
@@ -8158,7 +8174,7 @@ var consentManager = (function(e) {
         u.analytics.initialized || u.analytics.load(t)
       }
     }
-    var hi = (function() {
+    var mi = (function() {
         var e = function(t, n) {
           return (e =
             Object.setPrototypeOf ||
@@ -8178,8 +8194,8 @@ var consentManager = (function(e) {
             (t.prototype = null === n ? Object.create(n) : ((r.prototype = n.prototype), new r()))
         }
       })(),
-      mi = function() {
-        return (mi =
+      _i = function() {
+        return (_i =
           Object.assign ||
           function(e) {
             for (var t, n = 1, r = arguments.length; n < r; n++)
@@ -8188,7 +8204,7 @@ var consentManager = (function(e) {
             return e
           }).apply(this, arguments)
       },
-      _i = function(e, t, n, r) {
+      bi = function(e, t, n, r) {
         return new (n || (n = Promise))(function(o, a) {
           function i(e) {
             try {
@@ -8218,7 +8234,7 @@ var consentManager = (function(e) {
           c((r = r.apply(e, t || [])).next())
         })
       },
-      bi = function(e, t) {
+      gi = function(e, t) {
         var n,
           r,
           o,
@@ -8314,7 +8330,7 @@ var consentManager = (function(e) {
           for (var a = arguments[t], i = 0, s = a.length; i < s; i++, o++) r[o] = a[i]
         return r
       }
-    function gi(e, t) {
+    function yi(e, t) {
       var n = []
       if (!t) return e
       for (var r = 0, o = e; r < o.length; r++) {
@@ -8323,7 +8339,7 @@ var consentManager = (function(e) {
       }
       return n
     }
-    var yi = (function(e) {
+    var wi = (function(e) {
         function t() {
           var n = (null !== e && e.apply(this, arguments)) || this
           return (
@@ -8338,9 +8354,9 @@ var consentManager = (function(e) {
               workspaceAddedNewDestinations: !1
             }),
             (n.initialise = function() {
-              return _i(n, void 0, void 0, function() {
-                var e, n, r, o, a, i, s, c, u, l, f, p, d, h, m, _, b, v, g, y, w, A, k, x, C, E
-                return bi(this, function(S) {
+              return bi(n, void 0, void 0, function() {
+                var e, n, r, o, a, i, s, c, u, l, f, p, d, h, m, _, b, g, v, y, w, A, k, x, C, E
+                return gi(this, function(S) {
                   switch (S.label) {
                     case 0:
                       return (
@@ -8358,17 +8374,17 @@ var consentManager = (function(e) {
                         (p = e.cookieExpires),
                         (d = e.cdnHost),
                         (h = void 0 === d ? t.defaultProps.cdnHost : d),
-                        (m = Rn(f)),
+                        (m = zn(f)),
                         (_ = m.destinationPreferences),
                         (b = m.customPreferences),
-                        [4, Promise.all([i(), pi(h, vi([n], o))])]
+                        [4, Promise.all([i(), di(h, vi([n], o))])]
                       )
                     case 1:
                       return (
-                        (v = S.sent()),
-                        (g = v[0]),
-                        (y = v[1]),
-                        (w = gi(y, _ || {})),
+                        (g = S.sent()),
+                        (v = g[0]),
+                        (y = g[1]),
+                        (w = yi(y, _ || {})),
                         (A = _ && Object.keys(_).length > 0 && w.length > 0),
                         (x = Object.values(s || {}).some(function(e) {
                           return !0 === e || !1 === e
@@ -8382,7 +8398,7 @@ var consentManager = (function(e) {
                               ((E = c(y, k)),
                               (_ = E.destinationPreferences),
                               (b = E.customPreferences),
-                              In({
+                              Ln({
                                 destinationPreferences: _,
                                 customPreferences: b,
                                 cookieDomain: l,
@@ -8390,11 +8406,11 @@ var consentManager = (function(e) {
                                 cookieExpires: p
                               })))
                           : (k = _ || s),
-                        di({
+                        hi({
                           writeKey: n,
                           destinations: y,
                           destinationPreferences: _,
-                          isConsentRequired: g,
+                          isConsentRequired: v,
                           defaultDestinationBehavior: u,
                           categoryPreferences: k
                         }),
@@ -8403,7 +8419,7 @@ var consentManager = (function(e) {
                           destinations: y,
                           newDestinations: w,
                           preferences: k,
-                          isConsentRequired: g,
+                          isConsentRequired: v,
                           destinationPreferences: _,
                           workspaceAddedNewDestinations: Boolean(A)
                         }),
@@ -8422,7 +8438,7 @@ var consentManager = (function(e) {
                     newPreferences: e,
                     existingPreferences: o
                   })
-                return mi(mi({}, t), { preferences: a, havePreferencesChanged: !0 })
+                return _i(_i({}, t), { preferences: a, havePreferencesChanged: !0 })
               })
             }),
             (n.handleResetPreferences = function() {
@@ -8430,7 +8446,7 @@ var consentManager = (function(e) {
                 t = n.props,
                 r = t.initialPreferences,
                 o = t.mapCustomPreferences,
-                a = Rn(t.cookieName),
+                a = zn(t.cookieName),
                 i = a.destinationPreferences,
                 s = a.customPreferences
               ;(e = o ? s || r : i || r), n.setState({ preferences: e })
@@ -8458,17 +8474,17 @@ var consentManager = (function(e) {
                   var _ = c(p, m)
                   ;(l = _.destinationPreferences), (f = _.customPreferences) ? (m = f) : (f = m)
                 } else l = m
-                var b = gi(p, l)
+                var b = yi(p, l)
                 return (
                   (r.havePreferencesChanged || b.length > 0 || 'boolean' == typeof e) &&
-                    (In({
+                    (Ln({
                       destinationPreferences: l,
                       customPreferences: f,
                       cookieDomain: a,
                       cookieName: i,
                       cookieExpires: s
                     }),
-                    di({
+                    hi({
                       writeKey: o,
                       destinations: p,
                       destinationPreferences: l,
@@ -8477,7 +8493,7 @@ var consentManager = (function(e) {
                       defaultDestinationBehavior: u,
                       categoryPreferences: f
                     })),
-                  mi(mi({}, r), { destinationPreferences: l, preferences: m, newDestinations: b })
+                  _i(_i({}, r), { destinationPreferences: l, preferences: m, newDestinations: b })
                 )
               })
             }),
@@ -8491,14 +8507,14 @@ var consentManager = (function(e) {
                   a[s[i].id] = o
                 }
                 t = a
-              } else t = o ? mi(mi({}, r), o) : r
+              } else t = o ? _i(_i({}, r), o) : r
               return t
             }),
             n
           )
         }
         return (
-          hi(t, e),
+          mi(t, e),
           (t.prototype.render = function() {
             var e = this.props,
               t = e.children,
@@ -8529,9 +8545,9 @@ var consentManager = (function(e) {
                 })
           }),
           (t.prototype.componentDidMount = function() {
-            return _i(this, void 0, void 0, function() {
+            return bi(this, void 0, void 0, function() {
               var e, t
-              return bi(this, function(n) {
+              return gi(this, function(n) {
                 switch (n.label) {
                   case 0:
                     if (!(e = this.props.onError) || 'function' != typeof e) return [3, 6]
@@ -8568,8 +8584,8 @@ var consentManager = (function(e) {
           }),
           t
         )
-      })(g),
-      wi = (function() {
+      })(v),
+      Ai = (function() {
         var e = function(t, n) {
           return (e =
             Object.setPrototypeOf ||
@@ -8589,8 +8605,8 @@ var consentManager = (function(e) {
             (t.prototype = null === n ? Object.create(n) : ((r.prototype = n.prototype), new r()))
         }
       })(),
-      Ai = function() {
-        return (Ai =
+      ki = function() {
+        return (ki =
           Object.assign ||
           function(e) {
             for (var t, n = 1, r = arguments.length; n < r; n++)
@@ -8599,8 +8615,8 @@ var consentManager = (function(e) {
             return e
           }).apply(this, arguments)
       },
-      ki = { marketingAndAnalytics: null, advertising: null, functional: null },
-      xi = {
+      xi = { marketingAndAnalytics: null, advertising: null, functional: null },
+      Ci = {
         headings: {
           allowValue: 'Allow',
           categoryValue: 'Category',
@@ -8644,23 +8660,23 @@ var consentManager = (function(e) {
           }
         ]
       },
-      Ci = (function(e) {
+      Ei = (function(e) {
         function t() {
           var t = (null !== e && e.apply(this, arguments)) || this
           return (
             (t.mergeTemplates = function(e, t) {
               return {
-                headings: Ai(Ai({}, t.headings), e.headings),
-                checkboxes: Ai(Ai({}, t.checkboxes), e.checkboxes),
-                actionButtons: Ai(Ai({}, t.actionButtons), e.actionButtons),
-                cancelDialogButtons: Ai(Ai({}, t.cancelDialogButtons), e.cancelDialogButtons),
+                headings: ki(ki({}, t.headings), e.headings),
+                checkboxes: ki(ki({}, t.checkboxes), e.checkboxes),
+                actionButtons: ki(ki({}, t.actionButtons), e.actionButtons),
+                cancelDialogButtons: ki(ki({}, t.cancelDialogButtons), e.cancelDialogButtons),
                 categories:
                   null == t
                     ? void 0
                     : t.categories.map(function(t) {
                         var n
-                        return Ai(
-                          Ai({}, t),
+                        return ki(
+                          ki({}, t),
                           null === (n = null == e ? void 0 : e.categories) || void 0 === n
                             ? void 0
                             : n.find(function(e) {
@@ -8675,7 +8691,7 @@ var consentManager = (function(e) {
                 n = e.initialPreferences,
                 r = e.customCategories
               if (n) return n
-              if (!r) return ki
+              if (!r) return xi
               var o = {}
               return (
                 Object.keys(r).forEach(function(e) {
@@ -8713,12 +8729,12 @@ var consentManager = (function(e) {
               for (
                 var p = a,
                   d = function(e) {
-                    Cn.find(function(t) {
+                    En.find(function(t) {
                       return t === e.category
                     }) &&
                       !1 !== o[e.id] &&
                       (o[e.id] = p.advertising),
-                      En.find(function(t) {
+                      Sn.find(function(t) {
                         return t === e.category
                       }) &&
                         !1 !== o[e.id] &&
@@ -8738,7 +8754,7 @@ var consentManager = (function(e) {
           )
         }
         return (
-          wi(t, e),
+          Ai(t, e),
           (t.prototype.render = function() {
             var e = this,
               n = this.props,
@@ -8757,8 +8773,8 @@ var consentManager = (function(e) {
               m = n.bannerHideCloseButton,
               _ = n.bannerAsModal,
               b = n.preferencesDialogTitle,
-              v = n.preferencesDialogContent,
-              g = n.cancelDialogTitle,
+              g = n.preferencesDialogContent,
+              v = n.cancelDialogTitle,
               y = n.cancelDialogContent,
               w = n.customCategories,
               A = n.defaultDestinationBehavior,
@@ -8766,7 +8782,7 @@ var consentManager = (function(e) {
               x = n.preferencesDialogTemplate,
               C = n.onError
             return ze.createElement(
-              yi,
+              wi,
               {
                 onError: C,
                 writeKey: r,
@@ -8792,7 +8808,7 @@ var consentManager = (function(e) {
                   k = n.saveConsent,
                   C = n.havePreferencesChanged,
                   E = n.workspaceAddedNewDestinations
-                return ze.createElement(On, {
+                return ze.createElement(Tn, {
                   customCategories: o,
                   destinations: r,
                   newDestinations: a,
@@ -8812,14 +8828,14 @@ var consentManager = (function(e) {
                   bannerBackgroundColor: h || t.defaultProps.bannerBackgroundColor,
                   bannerAsModal: _,
                   preferencesDialogTitle: b,
-                  preferencesDialogContent: v,
-                  cancelDialogTitle: g,
+                  preferencesDialogContent: g,
+                  cancelDialogTitle: v,
                   cancelDialogContent: y,
                   havePreferencesChanged: C,
                   defaultDestinationBehavior: A,
                   workspaceAddedNewDestinations: E,
                   preferencesDialogTemplate: x
-                    ? e.mergeTemplates(x, xi)
+                    ? e.mergeTemplates(x, Ci)
                     : t.defaultProps.preferencesDialogTemplate
                 })
               }
@@ -8845,13 +8861,13 @@ var consentManager = (function(e) {
             preferencesDialogTitle: 'Website Data Collection Preferences',
             cancelDialogTitle: 'Are you sure you want to cancel?',
             defaultDestinationBehavior: 'disable',
-            preferencesDialogTemplate: xi
+            preferencesDialogTemplate: Ci
           }),
           t
         )
       })(le),
-      Ei = Ci
-    function Si() {
+      Si = Ei
+    function Pi() {
       if ('undefined' != typeof window && (window.navigator || navigator)) {
         var e = navigator,
           t = e.doNotTrack || window.doNotTrack || e.msDoNotTrack
@@ -8860,9 +8876,9 @@ var consentManager = (function(e) {
       }
       return null
     }
-    var Pi,
-      Oi = function() {
-        return (Oi =
+    var Oi,
+      Ti = function() {
+        return (Ti =
           Object.assign ||
           function(e) {
             for (var t, n = 1, r = arguments.length; n < r; n++)
@@ -8871,40 +8887,40 @@ var consentManager = (function(e) {
             return e
           }).apply(this, arguments)
       },
-      Ti = '5.4.0',
-      Ni = {},
-      Di = window
-    if (!Di.consentManagerConfig || 'function' != typeof Di.consentManagerConfig)
+      Ni = '5.4.0',
+      Di = {},
+      ji = window
+    if (!ji.consentManagerConfig || 'function' != typeof ji.consentManagerConfig)
       throw new Error('window.consentManagerConfig should be a function')
     if (
-      !(Pi = (Ni = Di.consentManagerConfig({
+      !(Oi = (Di = ji.consentManagerConfig({
         React: ze,
-        version: Ti,
-        openConsentManager: Pn,
-        doNotTrack: Si,
+        version: Ni,
+        openConsentManager: On,
+        doNotTrack: Pi,
         inEU: Ie.a,
         preferences: r,
         inRegions: Be.a
       })).container)
     )
       throw new Error('ConsentManager: container is required')
-    if (!Ni.writeKey) throw new Error('ConsentManager: writeKey is required')
-    if (!Ni.bannerContent) throw new Error('ConsentManager: bannerContent is required')
-    if (!Ni.preferencesDialogContent)
+    if (!Di.writeKey) throw new Error('ConsentManager: writeKey is required')
+    if (!Di.bannerContent) throw new Error('ConsentManager: bannerContent is required')
+    if (!Di.preferencesDialogContent)
       throw new Error('ConsentManager: preferencesDialogContent is required')
-    if (!Ni.cancelDialogContent) throw new Error('ConsentManager: cancelDialogContent is required')
+    if (!Di.cancelDialogContent) throw new Error('ConsentManager: cancelDialogContent is required')
     if (
-      ('string' == typeof Ni.implyConsentOnInteraction &&
-        (Ni.implyConsentOnInteraction = 'true' === Ni.implyConsentOnInteraction),
-      void 0 !== Ni.closeBehavior && 'string' == typeof Ni.closeBehavior)
+      ('string' == typeof Di.implyConsentOnInteraction &&
+        (Di.implyConsentOnInteraction = 'true' === Di.implyConsentOnInteraction),
+      void 0 !== Di.closeBehavior && 'string' == typeof Di.closeBehavior)
     ) {
-      var ji = [Dt.ACCEPT.toString(), Dt.DENY.toString(), Dt.DISMISS.toString()]
-      if (!ji.includes(Ni.closeBehavior))
-        throw new Error('ConsentManager: closeBehavior should be one of ' + ji)
+      var Ri = [jt.ACCEPT.toString(), jt.DENY.toString(), jt.DISMISS.toString()]
+      if (!Ri.includes(Di.closeBehavior))
+        throw new Error('ConsentManager: closeBehavior should be one of ' + Ri)
     }
-    var Ri = document.querySelector(Pi)
-    if (!Ri) throw new Error('ConsentManager: container not found')
-    ze.render(ze.createElement(Ei, Oi({}, Ni)), Ri)
+    var zi = document.querySelector(Oi)
+    if (!zi) throw new Error('ConsentManager: container not found')
+    ze.render(ze.createElement(Si, Ti({}, Di)), zi)
   }
 ])
 //# sourceMappingURL=consent-manager.js.map

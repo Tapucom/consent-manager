@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import Dialog from './dialog'
-import { DefaultButton, RedButton } from './buttons'
+import { DefaultButton, BlueButton } from './buttons'
 import { PreferenceDialogTemplate } from '../types'
 
 interface Props {
@@ -23,9 +23,9 @@ export default class CancelDialog extends PureComponent<Props> {
         <DefaultButton type="button" onClick={onBack}>
           {preferencesDialogTemplate?.cancelDialogButtons!.backValue}
         </DefaultButton>
-        <RedButton type="submit">
+        <BlueButton type="submit">
           {preferencesDialogTemplate?.cancelDialogButtons!.cancelValue}
-        </RedButton>
+        </BlueButton>
       </div>
     )
 
